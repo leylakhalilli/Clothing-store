@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800.900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Source+Sans+Pro:ital,wght@1,300&family=The+Nautigal:wght@700&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&family=Yellowtail&display=swap');
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.logo{
+  position: relative;
+  /*color:rgb(108, 34, 177);*/
+  color: red;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Dancing Script', cursive;
+}
+.navbar{
+  font-size: 16px;
+  top: 0;
+  left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  padding: 0 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar i.active{
+  color:rgb(108, 34, 177);
+}
+.navbar i{
+  font-size: 1.2rem;
+  padding: 0 7px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.navbar-light .navbar-toggler{
+  border: none;
+  outline: none;
+}
+#bar{
+  font-size: 1.5rem;
+  padding: 7px;
+  cursor: pointer;
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+}
+#bar:hover,
+#bar.active{
+  color:rgb(252, 252, 252);
+}
+section{
+  justify-content: center;
+  align-items: center;
+  padding: 60px 100px;
+  color: #fff;
+  overflow: hidden;
+
+}
+.sec-01 .container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.sec-01 .content{
+  width: 1150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.sec-01 .content .scroll-image{
+ width: 800px;
+ height: 800px;
+ overflow: hidden;
+  position: relative;
+
+}
+.sec-01 .content .scroll-image img{
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.sec-01 .content .text-box{
+  color: black;
+  z-index: 222;
+  background: rgba(68, 110, 145, 0.3);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  max-width: 400px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translate(-80px,50px);
+}
+.sec-01 .content .text-box h3{
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+ @media only screen and (max-width: 991px){
+  body > nav > div > button:hover,
+  body > nav > div > button:focus{
+      background-color: blueviolet;
+    }
+    body>nav>div>button:hover #bar,
+    body>nav>div>button:focus #bar{
+     color: aliceblue;
+    }
+    #navbarSupportedContent > ul {
+      margin: 1rem;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right;
+    }
+  
+   #navbarSupportedContent>ul>li:nth-child(n)>a{
+     padding: 10px 0;
+   }
+
+ }
+#home{
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(story.jpg);
+  /*background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(model6.jpeg);*/
+  height: 100vh;
+  background-size: cover;
+  background-position: top 60px center;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: flex-start;
+}
+#home h1{
+  color:rgb(170, 8, 8) ;
+  font-family: 'The Nautigal', cursive;
+  font-weight: 600;
+  font-size: 60px;
+}
+#home h5{
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+}
+#home h6{
+  color: aliceblue;
+}
+#home a{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+#home button{
+  font-size: 0.8rem;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  background-color: rgb(46, 45, 45);
+  color: aliceblue;
+  padding:13px 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 13px;
+}
+#home button:hover{
+  background-color:rgb(170, 8, 8);
+}
+.product{
+  cursor: pointer;
+  margin-bottom: 2rem ;
+}
+.product img{
+  transition: 0.3s all;
+}
+.product img:hover{
+  opacity: 0.6;
+}
+.product .btn-dark{
+  background-color:black;
+}
+.product .btn:hover{
+  background-color:  rgb(173, 20, 20);
+}
+.star{
+  color:rgb(235, 132, 59);
+
+}
+.p-name{
+  font-size: 15px;
+  color: black;
+}
+.p-price{
+  font-size: 12px;
+  color: black;
+}
+/* .product .btn{
+  background: rgb(211, 8, 8);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s all;
+} 
+.product:hover .btn{
+  transform: translateY(0);
+  opacity: 0;
+}*/
+ 
+.container h3{
+  text-align: center;
+  font-family: 'The Nautigal', cursive;
+  font-size: 60px;
+  color: rgb(207, 23, 23);
+  padding-top: 10px;
+  
+}
+.col-md-2{
+  display: inline-block;
+  cursor: pointer; 
+  background-size: cover;
+  transition: transform 0.5s; 
+  box-sizing: border-box;
+  background-size: auto;
+   padding: 10px;
+   margin:20px;
+   transition: transform 0.5s; 
+}
+.col-md-2:hover{
+  transform:translate(-10px);
+}
+
+#banner{
+  background-image: url("moda2.jpg");
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: top 70px center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#banner .btn-danger{
+  background-color:black;
+}
+#banner button:hover{
+  background-color:rgb(173, 20, 20);
+}
+#banner h1{
+  color: black;
+ 
+}
+
+.footer{
+  background: rgb(41, 40, 40);
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 30px 0 20px;
+}
+.footer p{
+  color: #8a8a8a;
+}
+.footer h4{
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+.footer-col-3 h5{
+  font-family: 'Courier New', Courier, monospace;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+.footer-col-1{
+  flex-basis: 30%;
+}
+.footer-col-2{
+  flex: 1;
+  text-align: center;
+}
+.footer-col-3{
+  flex-basis: 12%;
+  text-align: center;
+}
+

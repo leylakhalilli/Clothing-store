@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800.900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dancing+Script&family=Fira+Sans:ital,wght@0,200;0,400;1,200;1,300&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lobster&family=Poppins:ital,wght@0,400;0,500;1,300;1,400;1,500&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.logo{
+  position: relative;
+  color:rgb(108, 34, 177);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Dancing Script', cursive;
+}
+.navbar{
+  font-size: 16px;
+  top: 0;
+  left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  padding: 0 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar i.active{
+  color:rgb(108, 34, 177);
+}
+.navbar i{
+  font-size: 1.2rem;
+  padding: 0 7px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.navbar-light .navbar-toggler{
+  border: none;
+  outline: none;
+}
+#bar{
+  font-size: 1.5rem;
+  padding: 7px;
+  cursor: pointer;
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+}
+#bar:hover,
+#bar.active{
+  color:rgb(252, 252, 252);
+}
+ @media only screen and (max-width: 991px){
+  body > nav > div > button:hover,
+  body > nav > div > button:focus{
+      background-color: blueviolet;
+    }
+    body>nav>div>button:hover #bar,
+    body>nav>div>button:focus #bar{
+     color: aliceblue;
+    }
+    #navbarSupportedContent > ul {
+      margin: 1rem;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right;
+    }
+  
+   #navbarSupportedContent>ul>li:nth-child(n)>a{
+     padding: 10px 0;
+   }
+
+ }
+body{
+  /* background: rgb(219, 226, 226); */
+  background-image: url("MyPage.images/logback2.webp");
+  height: 100vh;
+  background-size: cover;
+  /* background-position: top 60px center; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: flex-start; */
+}
+.account{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account .container{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* border-radius: 25px; */
+  overflow: hidden;
+}
+.account .container .forms{
+  display: flex;
+  align-items: center;
+  width: 200%;
+  /* background-color: aqua; */
+  transition:height 0.2s ease;
+}
+.account .container .active .forms{
+  height: 600px;
+}
+.account .container .active .login{
+  margin-left:-50% ;
+  transition: margin-left 0.18s ease,opacity 0.15s ease;
+  opacity: 0;
+}
+.account .container .active .signup{
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.account .container .signup{
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+.account .container .form{
+  width: 50%;
+  padding: 30px;
+  /* background-color: wheat; */
+  transition: margin-left 0.18s ease;
+}
+.account .container .form .title{
+  position:relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+.account .container .form .title::before{
+  content: '';
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 25px;
+  background-color: blue;
+}
+.form .input-field{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+.input-field input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.input-field input:is(:focus, :valid){
+  border-bottom-color: rgb(226, 116, 43);
+}
+.input-field i{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+}
+.input-field input:is(:focus, :valid)~i{
+    color: rgb(226, 116, 43);
+}
+.input-field i.icon{
+  left: 0;
+}
+
+.form .checkbox-text{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.checkbox-text .checkbox-content{
+  display: flex;
+  align-items: center;
+}
+.checkbox-content input{
+  margin: 0 8px -2px 4px;
+  accent-color: blue;
+}
+
+.form a{
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form .text{
+  color:#333;
+  font-size: 14px;
+
+}
+ .form .button{
+   margin-top: 35px;
+ }
+ .form .button input{
+   border: none;
+   color: white;
+   font-size: 17px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   border-radius: 6px;
+   background-color: #999;
+   cursor: pointer;
+   transition: all 0.3s ease;
+ }
+
+ .button input:hover{
+        background-color: #333;
+ }
+ .form .login-signup{
+   margin-top: 30px;
+   text-align: center;
+ }
+
+
+
+
+/* .input-field i.showHidePw{
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+} */
+
+
+
+
+
+
+
+ /* 
+ body{
+   background: rgb(219, 226, 226);
+ }
+.row{
+  background: white;
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px gray ;
+}
+
+img{
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+ .btn1{
+   border: none;
+   outline: none;
+   height: 50px;
+   width: 100%;
+   background-color: black;
+   color: white;
+   border-radius: 4px;
+   font-weight: bold;
+ }
+.btn1:hover{
+  background: gray;
+  border: 1px solid;
+  color: black;
+} */

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800.900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Source+Sans+Pro:ital,wght@1,300&family=The+Nautigal:wght@700&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&family=Yellowtail&display=swap');
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.logo{
+  position: relative;
+  color:rgb(108, 34, 177);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Dancing Script', cursive;
+}
+.navbar{
+  font-size: 16px;
+  top: 0;
+  left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  padding: 0 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar i.active{
+  color:rgb(108, 34, 177);
+}
+.navbar i{
+  font-size: 1.2rem;
+  padding: 0 7px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.navbar-light .navbar-toggler{
+  border: none;
+  outline: none;
+}
+#bar{
+  font-size: 1.5rem;
+  padding: 7px;
+  cursor: pointer;
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+}
+#bar:hover,
+#bar.active{
+  color:rgb(252, 252, 252);
+}
+
+ @media only screen and (max-width: 991px){
+  body > nav > div > button:hover,
+  body > nav > div > button:focus{
+      background-color: blueviolet;
+    }
+    body>nav>div>button:hover #bar,
+    body>nav>div>button:focus #bar{
+     color: aliceblue;
+    }
+    #navbarSupportedContent > ul {
+      margin: 1rem;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right;
+    }
+  
+   #navbarSupportedContent>ul>li:nth-child(n)>a{
+     padding: 10px 0;
+   }
+
+ }
+
+
+ .small-img-group{
+    display: flex;
+    justify-content: space-between;
+ }
+ .small-img-col{
+   flex-basis: 32%;
+   cursor: pointer;
+ }
+ 
+  .sproduct select{
+    display: block;
+    padding: 5px 10px;
+  }
+
+ .sproduct input{
+   width: 50px;
+   height: 40px;
+   padding-left: 10px;
+   font-size: 16px;
+   margin-right: 10px;
+ }
+
+ .sproduct input:focus{
+   outline: none;
+ }
+
+ .sproduct .btn-dark{
+   background-color:rgb(144, 55, 228);
+     opacity: 1;
+     transition: 0.3s all;
+ }
+
+#best h3{
+ 
+    color:rgb(43, 40, 40);
+    font-family: 'The Nautigal', cursive;
+    font-weight: 600;
+    font-size: 60px;
+  
+}
+
+ .product .btn-dark{
+  background-color:black;
+}
+.product .btn:hover{
+  background-color:  rgb(173, 20, 20);
+}
+.star{
+  color:rgb(235, 132, 59);
+
+}
+.p-name{
+  font-size: 15px;
+}
+.p-price{
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+.footer{
+  background: rgb(41, 40, 40);
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 30px 0 20px;
+}
+.footer p{
+  color: #8a8a8a;
+}
+.footer h4{
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+.footer-col-3 h5{
+  font-family: 'Courier New', Courier, monospace;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+.footer-col-1{
+  flex-basis: 30%;
+}
+.footer-col-2{
+  flex: 1;
+  text-align: center;
+}
+.footer-col-3{
+  flex-basis: 12%;
+  text-align: center;
+}
+
