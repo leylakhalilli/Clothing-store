@@ -56,8 +56,7 @@
     color:rgb(252, 252, 252);
   }
   #home{
-    /* background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(MyPage.images/accessorytrends-1.jpg); */
-    background-image: url(MyPage.images/accessories-header.webp);
+    background-image: url(cssImages/accessories-header.webp);
     height: 100vh;
     background-size: cover;
     background-position: top 60px center;
@@ -104,29 +103,6 @@
     width: 100%; 
     height: 100vh;
   }
-
-  /* .img1{
-    position: absolute;
-    left: 10%;
-    top: 95%;
-    box-shadow: 1px 2px 4px;
-   }
-   .img2{
-     position: absolute;
-    left: 40%;
-    top: 95%;
-    box-shadow: 1px 2px 4px;
-   }
-   .img3{
-     position: absolute;
-    left: 70%;
-    top: 95%;
-    box-shadow: 1px 2px 4px;
-   }
-   .image:hover{
-     box-shadow: 1px 3px 9px;
-   } */
-
    .product{
     cursor: pointer;
     margin-bottom: 2rem ;

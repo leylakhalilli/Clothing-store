@@ -1,24 +1,27 @@
 package com.matrix.shopping.dao.entity;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "details")
-public class ProductDetailsEntity {
+public class DetailsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String material;
-    @OneToOne(mappedBy = "productDetailsEntity")
-    private ProductEntity productEntity;
-    public ProductDetailsEntity() {
+
+    //    @OneToOne(mappedBy = "detailsEntity")
+//    private ProductEntity productEntity;
+
+
+    public DetailsEntity() {
 
     }
 
-    public ProductDetailsEntity(Integer id, String material, ProductEntity productEntity) {
+    public DetailsEntity(Integer id, String material) {
         this.id = id;
         this.material = material;
-        this.productEntity = productEntity;
     }
 
     public Integer getId() {
@@ -37,20 +40,12 @@ public class ProductDetailsEntity {
         this.material = material;
     }
 
-    public ProductEntity getProductEntity() {
-        return productEntity;
-    }
-
-    public void setProductEntity(ProductEntity productEntity) {
-        this.productEntity = productEntity;
-    }
-
     @Override
     public String toString() {
-        return "ProductDetailsEntity{" +
+        return "DetailsEntity{" +
                 "id=" + id +
                 ", material='" + material + '\'' +
-                ", productEntity=" + productEntity +
                 '}';
     }
 }
+

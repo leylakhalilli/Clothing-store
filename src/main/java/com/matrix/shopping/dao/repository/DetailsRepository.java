@@ -1,7 +1,7 @@
 package com.matrix.shopping.dao.repository;
 
-import com.matrix.shopping.dao.entity.ProductDetailsEntity;
+import com.matrix.shopping.dao.entity.DetailsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductDetailsRepository extends JpaRepository<ProductDetailsEntity,Integer> {
+public interface DetailsRepository extends JpaRepository<DetailsEntity,Integer> {
 }

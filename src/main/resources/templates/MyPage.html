@@ -1,10 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <!-- <script src="javascript/mypage.js"></script> -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="MyPage.images/logo.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
+
 <body>
-$END$
+<!-- //navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+    <div class="container-fluid">
+        <h2 class="logo">crépuscule</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i id="bar" class="fas fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" th:classappend="${module == 'women' ? 'active' : ''}">
+                    <a class="nav-link " th:href="@{/women}">Women</a>
+                </li>
+                <li class="nav-item" th:classappend="${module == 'men' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/men}">Men</a>
+                </li>
+                <li class="nav-item" th:classappend="${module == 'accessories' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/accessories}">Accessories</a>
+                </li>
+                <li class="nav-item" th:classappend="${module == 'contact' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+                </li>
+                <li class="nav-item" th:classappend="${module == 'about' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/about}">About</a>
+                </li>
+                <li class="nav-item" th:classappend="${module == 'login' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/login}">Account</a>
+                </li>
+                <li class="nav-item">
+                    <i class="fal fa-search"></i>
+                    <i class="fal fa-shopping-bag"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- home-product -->
+<section id="home">
+    <div class="container">
+        <h1><span>New Season</span></h1>
+        <button><a href="#scroll-best"> Shop Now</a></button>
+    </div>
+</section>
+
+<section id="brand" class="container">
+    <div class="row m-0 py-5">
+        <img class="img-fluid col-lg-2 col-md-4 col-6" th:src="@{/img/chanel2.jpg}">
+        <img class="img-fluid col-lg-2 col-md-4 col-6" th:src="@{/img/dolceg.jpg}">
+        <img class="img-fluid col-lg-2 col-md-4 col-6" th:src="@{/img/prada.jpg}">
+        <img class="img-fluid col-lg-2 col-md-4 col-6" th:src="@{/img/jordan.jpg }">
+        <img class="img-fluid col-lg-2 col-md-4 col-6" th:src="@{/img/puma2.jpg }">
+        <img class="img-fluid col-lg-2 col-md-4 col-6" th:src="@{/img/calvinklein.jpg}">
+    </div>
+</section>
+
+<section class="sec-01">
+    <div class="container">
+        <div class="content">
+            <div class="scroll-image">
+                <img th:src="@{/img/login2.jpg}" alt="image">
+            </div>
+            <div class="text-box">
+                <h3 class="main-title">Comfort Comes in Many Styles</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Inventore distinctio nulla molestiae reiciendis saepe eos dolorem
+                    nobis repellendus reprehenderit doloremque aut suscipit laborum blanditiis molestias commodi, quam
+                    assumenda
+                    laudantium praesentium totam illo numquam! Temporibus,
+                    eveniet pariatur. Laudantium similique voluptates sapiente sit vitae tenetur, nam quidem pariatur
+                    quaerat
+                    suscipit quo expedita repudiandae ratione impedit dolor,
+                    fuga, perspiciatis possimus dolore velit nobis?</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '80px',
+        duration: 2500,
+        delay: 400
+    });
+    ScrollReveal().reveal('.sec-01 .scroll-image', {delay: 600, origin: 'bottom'});
+    ScrollReveal().reveal('.text-box', {delay: 700, origin: 'right'});
+</script>
+
+<section id="scroll-best" class="my-5 pb-5">
+    <div class="container text-center mt-5 py-5">
+        <h3>Best Selling</h3>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="pr:${allparametr}">
+            <a style="text-decoration:none;color: #0f0700" th:href="${'/product/'+pr.getId()+'/type/'+ pr.getClothesName()}">
+                <img class="img-fluid mb-3" th:src="${pr.getClothesImg()}" width="250">
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <h5 class="p-name" th:text="${pr.getClothesName()}"/>
+                <h4 class="p-price" th:text="${pr.getClothesPrice()}"/>
+                <button class="btn btn-dark">Buy Now</button>
+            </a>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" th:src="@{/img/tr4.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Sweatshirt-Black-Regular</h5>
+            <h4 class="p-price">30</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/tr2.jpg" th:src="@{/img/tr2.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">T-Shirt-White-Oversize</h5>
+            <h4 class="p-price">69.95</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/tr5.jpg" th:src="@{/img/tr5.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Jeans-Black-Slim Fit</h5>
+            <h4 class="p-price">75</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/tr6jpg.jpg" th:src="@{/img/tr6.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Sweatshirt-Navy blue-Oversize</h5>
+            <h4 class="p-price">53.99</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/tr8.jpg" th:src="@{/img/tr8.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Sweatpants-Gray-Regular</h5>
+            <h5 class="p-price">109.99</h5>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" th:src="@{/img/tr7.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Tonny Black Shoulder Bag-Beige</h5>
+            <h4 class="p-price">51.01</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/tr10.jpg" th:src="@{/img/tr10.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">River Club Jacket</h5>
+            <h4 class="p-price">163.90</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<section id="banner" class="my-5 py-5">
+    <div class="container">
+        <h1>Autumn Collection<br> Up To 40% Off</h1>
+        <button class="btn btn-danger">Shop Now</button>
+    </div>
+</section>
+
+
+<section id="best" class="my-5 pb-5">
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" th:src="@{/img/ac11.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+
+            </div>
+            <h5 class="p-name">Tonny Black Shoulder Bag - Green</h5>
+            <h4 class="p-price">70</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/ac12.jpg" th:src="@{/img/ac12.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Women's Gold Color Double Cuff</h5>
+            <h4 class="p-price">79.95</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/ac8.jpg" th:src="@{/img/ac8.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Cool Belt - Black</h5>
+            <h4 class="p-price">25</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="img-fluid mb-3" src="MyPage.images/ac9.jpg" th:src="@{/img/ac9.jpg}" width="250">
+            <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="p-name">Silver Knitted Bracelet </h5>
+            <h4 class="p-price">99.99</h4>
+            <button class="btn btn-dark">Buy Now</button>
+        </div>
+    </div>
+</section>
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h4>About us</h4>
+                <p>We were established to provide a perfect e-commerce experience to our customers and vendors.
+                    We support women's participation in the digital economy, domestic production and producers.
+                    Thus, we make a significant contribution to the growth of the country's economy and increase
+                    employment.</p>
+            </div>
+            <div class="footer-col-2">
+                <h4>Contact us </h4>
+                <div>
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Azerbaijan Baku</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone"></span>
+                        <span class="text">+994 00 000 00 00</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">crepuscule@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col-3">
+                <h4>Follow us</h4>
+                <div class="sosial">
+                    <h5><i class="fab fa-facebook-f"> crepuscule</i></h5>
+                    <h5><i class="fab fa-instagram"> crepuscule</i></h5>
+                    <h5><i class="fab fa-twitter">_crepuscule</i></h5>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
 </body>
+
 </html>

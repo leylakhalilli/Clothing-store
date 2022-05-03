@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create table aboutt
+      author: leyla
+      changes:
+        - createTable:
+            tableName: aboutt
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar
+              - column:
+                  name: text
+                  type: varchar
+        - createTable:
+            tableName: clothes
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: clothes_name
+                  type: varchar
+              - column:
+                  name: clothes_img
+                  type: varchar
+              - column:
+                  name: clothes_price
+                  type: double
+              - column:
+                  name: clothes_category
+                  type: varchar
+              - column:
+                  name: description
+                  type: varchar

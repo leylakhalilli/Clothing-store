@@ -10,14 +10,6 @@
   box-sizing: border-box;
   
 }
-/* body{
-    min-height: 100vh;
-    background: url("/MyPage.images/contact2.jpg ") no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 .logo{
   position: relative;
   color:rgb(108, 34, 177);

@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <title>Contact Us</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" th:href="@{/css/contactUs.css}" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
-  <!-- <script src="javascript/mypage.js"></script> -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" href="MyPage.images/logo.jpg">
@@ -32,27 +31,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1:5502/MyPage.html">Home</a>
+                <a class="nav-link" th:href="@{/mypage}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1:5502/about.html">About</a>
+                <a class="nav-link"  th:href="@{/about}">About</a>
               </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:5502/women.html">Women</a>
+            <a class="nav-link"  th:href="@{/women}">Women</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:5502/men.html">Men</a>
+            <a class="nav-link" th:href="@{/men}">Men</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:5502/accessories.html">Accessories</a>
+            <a class="nav-link"  th:href="@{/accessories}">Accessories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:5502/logIn.html">Account</a>
+            <a class="nav-link"  th:href="@{/login}">Account</a>
           </li>
           <li class="nav-item">
             <i class="fal fa-search"></i>
             <i class="fal fa-shopping-bag"></i>
           </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -102,20 +102,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="credits">
-        inspired by
-        <a class="credits-link" href="https://dribbble.com/shots/2666271-Contact" target="_blank">
-          <svg class="dribbble" viewBox="0 0 200 200">
-            <g stroke="#ffffff" fill="none">
-              <circle cx="100" cy="100" r="90" stroke-width="20"></circle>
-              <path d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345" stroke-width="20"></path>
-              <path d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951" stroke-width="20"></path>
-              <path d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103" stroke-width="20"></path>
-            </g>
-          </svg>
-          Gururaj
-        </a>
-      </div> -->
     </div>
   </div>
   

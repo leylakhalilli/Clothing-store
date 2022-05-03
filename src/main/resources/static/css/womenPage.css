@@ -11,13 +11,11 @@
 
 .logo {
     position: relative;
-    /*color: rgb(108, 34, 177);*/
-    color: red;
+    color: rgb(108, 34, 177);
     text-decoration: none;
     font-weight: 700;
     font-family: 'Dancing Script', cursive;
 }
-
 .navbar {
     font-size: 16px;
     top: 0;
@@ -69,7 +67,7 @@
 }
 
 #home {
-    background-image: url(model6.jpeg);
+    background-image: url(cssImages/model6.jpeg);
     height: 100vh;
     background-size: cover;
     background-position: top 60px center;

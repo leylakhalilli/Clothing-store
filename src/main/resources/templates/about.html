@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>About</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" th:href="@{/css/about.css}"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -25,57 +25,42 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5502/MyPage.html">Home</a>
+                        <a class="nav-link" th:href="@{/mypage}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5502/women.html">Women</a>
+                        <a class="nav-link" th:href="@{/shopping/women}">Women</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5502/men.html">Men</a>
+                        <a class="nav-link" th:href="@{/shopping/men}">Men</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5502/accessories.html">Accessories</a>
+                        <a class="nav-link" th:href="@{/shopping/accessories}">Accessories</a>
                       </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+                    </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5502/logIn.html">Account</a>
+                        <a class="nav-link" th:href="@{/shopping/logIn}">Account</a>
                       </li>
                     <li class="nav-item">
                         <i class="fal fa-search"></i>
                         <i class="fal fa-shopping-bag"></i>
                     </li>
-
-
+                </ul>
             </div>
         </div>
     </nav>
-
 
 <div class="section">
     <div class="container">
         <div class="content-section">
             <div class="title">
-                <h1>Welcome</h1>
+<!--                <h1>Welcome</h1>-->
+                <h1 th:text="${parametr.getTitle()}" />
             </div>
             <div class="content">
-                <!-- <h3>Lorem Ipsum is simply dummy text of the printing </h3>  -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Phasellus accumsan eget odio a rhoncus. Quisque bibendum ac nulla at varius.
-                     Proin et mauris tempus, cursus tellus vel, maximus odio. 
-                     Mauris dignissim lorem at enim finibus pharetra. 
-                     Suspendisse vulputate at lectus eu accumsan. Vivamus varius semper sem. 
-                     Etiam sodales vitae nisl vel euismod. Ut faucibus mauris pellentesque faucibus vestibulum. 
-                     Praesent dignissim augue non purus cursus, blandit tempor felis dictum. Aliquam condimentum, 
-                     leo vitae hendrerit fringilla, lacus sem mollis leo, eget consectetur orci eros quis lacus. 
-                     Donec quis elit at diam eleifend consequat. Sed vestibulum scelerisque eros. Proin vitae blandit erat. 
-                     Integer dictum bibendum velit, vehicula laoreet tellus sodales eu. Suspendisse tristique metus erat, in consequat tellus volutpat vitae. 
-                     Mauris eu viverra turpis.Sed at nunc mi. Sed finibus, lectus ac lobortis finibus, 
-                     libero purus euismod purus, et tincidunt est sem et felis. Mauris ligula dolor, 
-                     faucibus vel nibh non, pharetra rutrum odio. Quisque eu suscipit purus. 
-                   </p>
-                   <!-- <div class="button">
-                       <a href="">Read More</a>
-                   </div> -->
+                    <p th:text="${parametr.getText()}" />
             </div>
             <div class="social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -84,11 +69,10 @@
             </div>
         </div>
         <div class="image-section">
-            <img src="MyPage.images/log5.jpg">
+            <img th:src="@{/img/log5.jpg}">
         </div>
     </div>
 </div>
-
 
 
 </body>

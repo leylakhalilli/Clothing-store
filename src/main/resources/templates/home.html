@@ -1,10 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-$END$
+
+<h1>Welcome</h1>
+
+<!--<input name="name" id="name">Name</input>-->
+<!--<input name="price" id="price">Price</input>-->
+<!--<input name="description" id="description">description</input>-->
+<!--<button id="button">Submit</button>-->
+
+<!--<script>-->
+
+<!--    $(#button).click(function (){-->
+<!--       console.log("start")-->
+
+<!--        var name=$("#name").val()-->
+<!--        var price=$("#price").val()-->
+<!--        var description=$("#description").val()-->
+
+<!--        var data={}-->
+<!--        data.name=name-->
+<!--        data.price=price-->
+<!--        data.description=description-->
+<!--        console.log(data)-->
+
+<!--        $ajax({-->
+<!--            type:"POST",-->
+<!--            url:"http://localhost:8081/main/product-save",-->
+<!--            data:JSON.stringify(data),-->
+<!--            success:true,-->
+<!--            contentType:"application/json",-->
+<!--            dataType:"json"-->
+<!--        });-->
+
+
+
+<!--    })-->
+
+
+
+<!--</script>-->
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <td>Id</td>-->
+<!--        <td>Name</td>-->
+<!--        <td>Price</td>-->
+<!--        <td>Description</td>-->
+<!--        <td>material</td>-->
+
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="product:${products}">-->
+<!--        <td th:text="${product.id}">Id</td>-->
+<!--        <td th:text="${product.name}">Name</td>-->
+<!--        <td th:text="${product.price}">Price</td>-->
+<!--        <td th:text="${product.description}">Description</td>-->
+
+<!--        &lt;!&ndash;        <td th:text="${product.description}">Description</td>&ndash;&gt;-->
+
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
 </body>
 </html>
