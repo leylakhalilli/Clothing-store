@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create table ContactUs
+      author: leyla
+      changes:
+        - createTable:
+            tableName: contact
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+              - column:
+                  name: email
+                  type: varchar
+              - column:
+                  name: contact_no
+                  type: varchar
+              - column:
+                  name: message
+                  type: varchar
