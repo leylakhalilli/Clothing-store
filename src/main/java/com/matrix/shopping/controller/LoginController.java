@@ -1,6 +1,7 @@
 package com.matrix.shopping.controller;
 
 import com.matrix.shopping.dao.entity.login.UserEntity;
+import com.matrix.shopping.model.UserDto;
 import com.matrix.shopping.service.login.SecurityService;
 import com.matrix.shopping.service.login.UserService;
 import com.matrix.shopping.validator.UserValidator;
@@ -11,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Objects;
 
 @Controller
 public class LoginController {
@@ -26,8 +29,10 @@ public class LoginController {
         if (securityService.isAuthenticated()) {
             return "redirect:/";
         }
-        if (error != null)
-            model.addAttribute("error", "Invalid username or password,please verify your credentials.");
+
+        if (error != null) {
+                model.addAttribute("error", "Invalid username or password,please verify your credentials.");
+        }
 
         if (logout != null)
             model.addAttribute("message", "Login successful.");
@@ -44,7 +49,7 @@ public class LoginController {
         return "registration";
     }
 
-    @PostMapping(value = "/registration")
+    @PostMapping("/registration")
     public String registration(@ModelAttribute("userForm") UserEntity userForm, BindingResult bindingResult) {
         userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()) {
@@ -53,11 +58,11 @@ public class LoginController {
         userService.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPassword());
         return "redirect:/";
-
     }
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         return "welcome";
     }
+
 }

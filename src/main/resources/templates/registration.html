@@ -61,22 +61,22 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="signup">
-        <form method="POST" th:object="${userForm}" action="@{/registration}">
+        <form method="POST" th:object="${userForm}" th:action="@{/registration}">
             <label for="chk" aria-hidden="true">Sign up</label>
             <div>
-                <input id="name" type="text" th:field="*{username}" placeholder="Username" autofocus="true">
+                <input id="username" type="text" th:field="*{username}" placeholder="Username" autofocus="true">
 
-                <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+<!--                <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>-->
                 <!-- <p  th:if="${#fields.hasErrors('username')}" th:class="${#fields.hasErrors('username')}? error">usernamme</p>-->
                 <!-- <p class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>-->
                 <!--  <input id="name" type="text" th:field="*{username}"  placeholder="Username">-->
 
             </div>
-            <input type="email" name="email" placeholder="Email" required="">
+            <input id="email" name = "email" type="email" th:field="*{email}" placeholder="Password">
             <div>
-                <input id="pass" type="password" th:field="*{password}" placeholder="Password">
 
-                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                <input id="password" type="password" th:field="*{password}" placeholder="Password">
+                <!--                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
                 <!--                <p th:if="${#fields.hasErrors('password')}" th:class="${#fields.hasErrors('password')}? error">-->
                 <!--                    password</p>-->
 

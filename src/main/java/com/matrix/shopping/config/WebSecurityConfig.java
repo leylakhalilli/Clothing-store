@@ -38,7 +38,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "cart/buy/{id}", "cart/**", "cart/remove/**", "cart/update/**", "cart",
                         "/admin", "/admin/**", "/addproduct", "/editproduct/{id}",
                         "/saveProduct", "/deleteProduct/{id}").permitAll()
-//                .antMatchers("/welcome",  "cart/remove/**", "cart/update/**", "cart").hasRole("user")
+//                .and()
+//                .authorizeRequests()
+                .antMatchers("/", "/welcome").hasRole("USER")
+//                .anyRequest().authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -46,7 +49,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
+                .permitAll()
+        ;
     }
 
     @Bean
