@@ -4,48 +4,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dancing+Script&family=Fira+Sans:ital,wght@0,200;0,400;1,200;1,300&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lobster&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap');
 
 
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+
 }
-.logo{
+
+/* body{
+    min-height: 100vh;
+    background: url("/MyPage.images/contact2.jpg ") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.logo {
   position: relative;
-  color:rgb(108, 34, 177);
+  color: rgb(108, 34, 177);
   text-decoration: none;
   font-weight: 700;
   font-family: 'Dancing Script', cursive;
 }
-.navbar{
+
+.navbar {
   font-size: 16px;
   top: 0;
   left: 0;
 }
 
-.navbar-light .navbar-nav .nav-link{
+.navbar-light .navbar-nav .nav-link {
   padding: 0 20px;
   color: rgb(0, 0, 0);
   transition: 0.3s ease;
 }
+
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active,
-.navbar i.active{
-  color:rgb(108, 34, 177);
+.navbar i.active {
+  color: rgb(108, 34, 177);
 }
-.navbar i{
+
+.navbar i {
   font-size: 1.2rem;
   padding: 0 7px;
   cursor: pointer;
   font-weight: 500;
   transition: 0.3s ease;
 }
-.navbar-light .navbar-toggler{
+
+.navbar-light .navbar-toggler {
   border: none;
   outline: none;
 }
-#bar{
+
+#bar {
   font-size: 1.5rem;
   padding: 7px;
   cursor: pointer;
@@ -53,45 +67,54 @@
   color: black;
   transition: 0.3s ease;
 }
+
 #bar:hover,
-#bar.active{
-  color:rgb(252, 252, 252);
+#bar.active {
+  color: rgb(252, 252, 252);
 }
 
- @media only screen and (max-width: 991px){
-  body > nav > div > button:hover,
-  body > nav > div > button:focus{
-      background-color: blueviolet;
-    }
-    body>nav>div>button:hover #bar,
-    body>nav>div>button:focus #bar{
-     color: aliceblue;
-    }
-    #navbarSupportedContent > ul {
-      margin: 1rem;
-      justify-content: flex-end;
-      align-items: flex-end;
-      text-align: right;
-    }
-  
-   #navbarSupportedContent>ul>li:nth-child(n)>a{
-     padding: 10px 0;
-   }
+@media only screen and (max-width: 991px) {
 
- }
- 
- *, *:before, *:after {
+  body>nav>div>button:hover,
+  body>nav>div>button:focus {
+    background-color: blueviolet;
+  }
+
+  body>nav>div>button:hover #bar,
+  body>nav>div>button:focus #bar {
+    color: aliceblue;
+  }
+
+  #navbarSupportedContent>ul {
+    margin: 1rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  #navbarSupportedContent>ul>li:nth-child(n)>a {
+    padding: 10px 0;
+  }
+
+}
+
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: linear-gradient(to right, #573b8a 0%, #eb466b 100%);
+  background: linear-gradient(to right, #8b6cc4 0%, #d57c8f 100%);
   /* font-size: 12px; */
+
 }
 
-body, button, input {
+body,
+button,
+input {
   /* font-family: 'Montserrat', sans-serif;
   font-weight: 700; */
   letter-spacing: 1.4px;
@@ -112,7 +135,7 @@ body, button, input {
 
 .screen {
   position: relative;
-  background: #3e3e3e;
+  background: #9f8c8c;
   border-radius: 15px;
 }
 
@@ -133,7 +156,7 @@ body, button, input {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background: #4d4d4f;
+  background: #9f8c8c;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -189,7 +212,8 @@ body, button, input {
   display: flex;
   flex-direction: column;
   position: relative;
-  color: #ea1d6f;
+  color: rgb(108, 34, 177);
+
   font-size: 26px;
 }
 
@@ -201,13 +225,13 @@ body, button, input {
   bottom: -10px;
   width: 25px;
   height: 4px;
-  background: #ea1d6f;
+  background: black;
 }
 
 .app-contact {
   margin-top: auto;
   font-size: 10px;
-  color: #888;
+  color: black;
 }
 
 .app-form-group {
@@ -239,7 +263,7 @@ body, button, input {
 }
 
 .app-form-control::placeholder {
-  color: #666;
+  color: rgb(128, 124, 124);
 }
 
 .app-form-control:focus {
@@ -249,7 +273,8 @@ body, button, input {
 .app-form-button {
   background: none;
   border: none;
-  color: #ea1d6f;
+  color: rgb(108, 34, 177);
+
   font-size: 14px;
   cursor: pointer;
   outline: none;
@@ -258,7 +283,8 @@ body, button, input {
 }
 
 .app-form-button:hover {
-  color: #b9134f;
+  color: rgb(79, 25, 129);
+
 }
 
 .credits {

@@ -2,108 +2,212 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Contact Us</title>
+    <title>Contact Us</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" th:href="@{/css/contactUs.css}" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="icon" href="MyPage.images/logo.jpg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/contactUs.css}"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="MyPage.images/logo.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
     <div class="container-fluid">
- <h2 class="logo">crépuscule</h2>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i id="bar" class="fas fa-bars"></i></span>
-      </button>
+        <h2 class="logo">crépuscule</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i id="bar" class="fas fa-bars"></i></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/mypage}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  th:href="@{/about}">About</a>
-              </li>
-          <li class="nav-item">
-            <a class="nav-link"  th:href="@{/women}">Women</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/men}">Men</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  th:href="@{/accessories}">Accessories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  th:href="@{/login}">Account</a>
-          </li>
-          <li class="nav-item">
-            <i class="fal fa-search"></i>
-            <i class="fal fa-shopping-bag"></i>
-          </li>
-        </ul>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/mypage}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/women}">Women</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/men}">Men</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/accessories}">Accessories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Account</a>
+                </li>
+                <li class="nav-item">
+                    <i class="fal fa-search"></i>
+                    <i class="fal fa-shopping-bag"></i>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
-  <div class="background">
+<div class="background">
     <div class="container">
-      <div class="screen">
-        <div class="screen-header">
-          <div class="screen-header-left">
-            <!-- <div class="screen-header-button maximize"></div> -->
-            <div class="screen-header-button maximize"></div>
-            <div class="screen-header-button minimize"></div>
-          </div>
-          <div class="screen-header-right">
-            <div class="screen-header-ellipsis"></div>
-            <div class="screen-header-ellipsis"></div>
-            <div class="screen-header-ellipsis"></div>
-          </div>
-        </div>
-        <div class="screen-body">
-          <div class="screen-body-item left">
-            <div class="app-title">
-              <span>CONTACT</span>
-              <span>US</span>
+        <div class="screen">
+            <div class="screen-header">
+                <div class="screen-header-left">
+                    <!-- <div class="screen-header-button maximize"></div> -->
+                    <div class="screen-header-button maximize"></div>
+                    <div class="screen-header-button minimize"></div>
+                </div>
+                <div class="screen-header-right">
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                </div>
             </div>
-            <div class="app-contact">CONTACT INFO : +994 50 000 00 00</div>
-          </div>
-          <div class="screen-body-item">
-            <div class="app-form">
-              <div class="app-form-group">
-                <input class="app-form-control" placeholder="NAME" required="" >
-              </div>
-              <div class="app-form-group">
-                <input class="app-form-control" placeholder="EMAIL" required="">
-              </div>
-              <div class="app-form-group">
-                <input class="app-form-control" placeholder="CONTACT NO">
-              </div>
-              <div class="app-form-group message">
-                <input class="app-form-control" placeholder="MESSAGE" required="">
-              </div>
-              <div class="app-form-group buttons">
-                <button class="app-form-button">CANCEL</button>
-                <button class="app-form-button">SEND</button>
-              </div>
+            <div class="screen-body">
+                <div class="screen-body-item left">
+                    <div class="app-title">
+                        <span>CONTACT</span>
+                        <span>US</span>
+                    </div>
+                    <div class="app-contact">CONTACT INFO : +994 50 000 00 00</div>
+                </div>
+                <div class="screen-body-item">
+                    <div class="app-form" id="search-form">
+                        <div class="app-form-group">
+                            <input class="app-form-control" placeholder="NAME" required="">
+                        </div>
+                        <div class="app-form-group">
+                            <input class="app-form-control" placeholder="Eg. example@email.com" required="">
+                        </div>
+                        <div class="app-form-group">
+                            <input class="app-form-control" placeholder="Eg. +994 00 000 00 00">
+                        </div>
+                        <div class="app-form-group message">
+                            <input class="app-form-control" placeholder="MESSAGE" required="">
+                        </div>
+                        <div class="app-form-group buttons">
+                            <button class="app-form-button">CANCEL</button>
+                            <button class="app-form-button">SEND</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  
+</div>
+
+
+<script src="js/contact.js"></script>
+<script>
+    // alert("helloooo")
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+
+    $(document).ready(function () {
+        $('#contactButton').click(function () {
+            let name = $('#name').val()
+            let email = $('#email').val()
+            let phone = $('#phone').val()
+            let message = $('#message').val()
+
+            var data = {}
+            data.name = name
+            data.email = email
+            data.phone = phone
+            data.message = message
+
+            // alert("helloooo")
+
+            console.log(data)
+
+            $.ajax(
+                {
+                    url: '/contact/',
+                    type: 'POST',  // http method
+                    data: JSON.stringify(data),  // data to submit
+                    dataType: 'json',
+                    contentType: "application/json"
+
+                }
+            );
+            alert("Your message was sent!");
+        });
+
+
+    })
+    //
+    // $(document).ready(function () {
+    //
+    //     $("#search-form").submit(function (event) {
+    //
+    //
+    //         event.preventDefault();
+    //
+    //         fire_ajax_submit();
+    //
+    //     });
+    //
+    // });
+    //
+    // function fire_ajax_submit() {
+    //
+    //     var search = {}
+    //     search["username"] = $("#username").val();
+    //
+    //     $("#btn-search").prop("disabled", true);
+    //
+    //     $.ajax({
+    //         type: "POST",
+    //         contentType: "application/json",
+    //         url: "/api/search",
+    //         data: JSON.stringify(search),
+    //         dataType: 'json',
+    //         cache: false,
+    //         timeout: 600000,
+    //         success: function (data) {
+    //
+    //             var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+    //                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
+    //             $('#feedback').html(json);
+    //
+    //             console.log("SUCCESS : ", data);
+    //             $("#btn-search").prop("disabled", false);
+    //
+    //         },
+    //         error: function (e) {
+    //
+    //             var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+    //                 + e.responseText + "&lt;/pre&gt;";
+    //             $('#feedback').html(json);
+    //
+    //             console.log("ERROR : ", e);
+    //             $("#btn-search").prop("disabled", false);
+    //
+    //         }
+    //     });
+    //
+    // }
+</script>
+
 </body>
 </html>

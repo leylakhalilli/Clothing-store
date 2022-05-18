@@ -56,7 +56,8 @@ public class ClothesDto {
     }
 
     public ClothesCategory getClothesCategory() {
-        return ClothesCategory.valueOf(String.valueOf(clothesCategory));
+
+        return clothesCategory;
     }
 
     public void setClothesCategory(ClothesCategory clothesCategory) {

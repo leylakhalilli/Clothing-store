@@ -22,9 +22,12 @@ public class ClothesController {
         model.addAttribute("womenparametr", clothesService.getByCategoryWomen());
         model.addAttribute("menparametr", clothesService.getByCategoryMen());
         model.addAttribute("accparametr", clothesService.getByCategoryAccessories());
-        model.addAttribute("allparametr", clothesService.getClothesParametr());
+        model.addAttribute("showwomen", clothesService.getClothesWomen());
+        model.addAttribute("showmen", clothesService.getClothesMen());
+        model.addAttribute("showacc", clothesService.getClothesAccessories());
         return "MyPage";
     }
+
 
     @GetMapping("/product/{clothesId}/type/{clothesCategory}")
     public String product(Model model, @PathVariable Integer clothesId, String clothesCategory) {
@@ -36,6 +39,27 @@ public class ClothesController {
     @GetMapping("/contact")
     public String contact() {
         return "contact";
+
+    }
+
+    @GetMapping("/women")
+    public String women(Model model) {
+        model.addAttribute("women", clothesService.getByCategoryWomen());
+        return "women";
+
+    }
+
+    @GetMapping("/men")
+    public String men(Model model) {
+        model.addAttribute("men", clothesService.getByCategoryMen());
+        return "men";
+
+    }
+
+    @GetMapping("/accessories")
+    public String accessories(Model model) {
+        model.addAttribute("accessories", clothesService.getByCategoryAccessories());
+        return "accessories";
 
     }
 }

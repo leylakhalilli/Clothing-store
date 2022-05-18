@@ -4,19 +4,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "user_name")
+    @Column(name = "username")
     private String username;
     @Column(name = "password")
     private String password;
     @Column(name = "email")
     private String email;
-
-
 
     @ManyToMany
     @JoinTable(
@@ -25,8 +23,6 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     private List<RoleEntity> roles;
-
-
     public UserEntity(){
 
     }
@@ -46,12 +42,12 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getUserName() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUserName(String userName) {
-        this.username = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

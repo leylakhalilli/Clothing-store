@@ -117,8 +117,9 @@
         <h3>Best Selling</h3>
     </div>
     <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="pr:${allparametr}">
-            <a style="text-decoration:none;color: #0f0700" th:href="${'/product/'+pr.getId()+'/type/'+ pr.getClothesName()}">
+        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="pr:${showwomen}">
+            <a style="text-decoration:none;color: #0f0700"
+               th:href="${'/product/'+pr.getId()+'/type/'+ pr.getClothesName()}">
                 <img class="img-fluid mb-3" th:src="${pr.getClothesImg()}" width="250">
                 <div class="star">
                     <i class="bi bi-star-fill"></i>
@@ -132,96 +133,22 @@
                 <button class="btn btn-dark">Buy Now</button>
             </a>
         </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/tr4.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Sweatshirt-Black-Regular</h5>
-            <h4 class="p-price">30</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/tr2.jpg" th:src="@{/img/tr2.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">T-Shirt-White-Oversize</h5>
-            <h4 class="p-price">69.95</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/tr5.jpg" th:src="@{/img/tr5.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Jeans-Black-Slim Fit</h5>
-            <h4 class="p-price">75</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/tr6jpg.jpg" th:src="@{/img/tr6.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Sweatshirt-Navy blue-Oversize</h5>
-            <h4 class="p-price">53.99</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/tr8.jpg" th:src="@{/img/tr8.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Sweatpants-Gray-Regular</h5>
-            <h5 class="p-price">109.99</h5>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/tr7.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Tonny Black Shoulder Bag-Beige</h5>
-            <h4 class="p-price">51.01</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/tr10.jpg" th:src="@{/img/tr10.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">River Club Jacket</h5>
-            <h4 class="p-price">163.90</h4>
-            <button class="btn btn-dark">Buy Now</button>
+
+        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="pr:${showmen}">
+            <a style="text-decoration:none;color: #0f0700"
+               th:href="${'/product/'+pr.getId()+'/type/'+ pr.getClothesName()}">
+                <img class="img-fluid mb-3" th:src="${pr.getClothesImg()}" width="250">
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <h5 class="p-name" th:text="${pr.getClothesName()}"/>
+                <h4 class="p-price" th:text="${pr.getClothesPrice()}"/>
+                <button class="btn btn-dark">Buy Now</button>
+            </a>
         </div>
     </div>
 </section>
@@ -236,59 +163,23 @@
 
 <section id="best" class="my-5 pb-5">
     <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/ac11.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
+        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="pr:${showacc}">
+            <a style="text-decoration:none;color: #0f0700"
+               th:href="${'/product/'+pr.getId()+'/type/'+ pr.getClothesName()}">
+                <img class="img-fluid mb-3" th:src="${pr.getClothesImg()}" width="250">
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <h5 class="p-name" th:text="${pr.getClothesName()}"/>
+                <h4 class="p-price" th:text="${pr.getClothesPrice()}"/>
+                <button class="btn btn-dark">Buy Now</button>
+            </a>
+        </div>
 
-            </div>
-            <h5 class="p-name">Tonny Black Shoulder Bag - Green</h5>
-            <h4 class="p-price">70</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/ac12.jpg" th:src="@{/img/ac12.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Women's Gold Color Double Cuff</h5>
-            <h4 class="p-price">79.95</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/ac8.jpg" th:src="@{/img/ac8.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Cool Belt - Black</h5>
-            <h4 class="p-price">25</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" src="MyPage.images/ac9.jpg" th:src="@{/img/ac9.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Silver Knitted Bracelet </h5>
-            <h4 class="p-price">99.99</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
     </div>
 </section>
 <!-- footer -->

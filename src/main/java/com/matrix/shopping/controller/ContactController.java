@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/contact")
 public class ContactController {
-    private ContactService contactService;
+    private final ContactService contactService;
 
     public ContactController(ContactService contactService) {
         this.contactService = contactService;

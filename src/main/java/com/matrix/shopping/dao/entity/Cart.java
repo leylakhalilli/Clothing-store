@@ -6,10 +6,8 @@ public class Cart {
     private Cart[] carts;
 
     public Cart(ClothesEntity clothesEntity, int quantity) {
-
         this.clothesEntity = clothesEntity;
         this.quantity = quantity;
-        this.carts = carts;
     }
 
     public ClothesEntity getClothesEntity() {
@@ -28,11 +26,4 @@ public class Cart {
         this.quantity = quantity;
     }
 
-    public Cart[] getCarts() {
-        return carts;
-    }
-
-    public void setCarts(Cart[] carts) {
-        this.carts = carts;
-    }
 }

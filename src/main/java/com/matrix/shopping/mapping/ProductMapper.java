@@ -12,6 +12,7 @@ public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
     @Mappings(@Mapping(source = "name", target = "name"))
+
     Product entityToDto(ProductEntity productEntity);
 
 

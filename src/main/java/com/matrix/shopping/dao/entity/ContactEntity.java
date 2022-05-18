@@ -17,15 +17,16 @@ public class ContactEntity {
     @Column(name = "message")
     private String message;
 
-    public ContactEntity(String name, String email, String message, String phone) {
-    }
-
-    public ContactEntity(Integer id, String name, String email, String phone, String message) {
+    public ContactEntity(String name, String email, String phone, String message) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.message = message;
+    }
+
+    public ContactEntity() {
+
     }
 
     public Integer getId() {

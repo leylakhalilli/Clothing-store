@@ -36,10 +36,8 @@ public class SecurityServiceImp implements SecurityService {
 
         }
 
-
     }
 
-    @Override
     public boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || AnonymousAuthenticationToken.class.
@@ -48,4 +46,6 @@ public class SecurityServiceImp implements SecurityService {
         }
         return authentication.isAuthenticated();
     }
+
+
 }

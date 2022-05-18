@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <title>My Website</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/cart.css}" rel="stylesheet" type="text/css"/>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -63,62 +63,44 @@
 <div class="CartContainer">
     <div class="Header">
         <h3 class="Heading">Shopping Cart</h3>
-        <h5 class="Action">Remove all</h5>
+        <a th:href="@{'/cart/clear'}" class="Action">Remove all</a>
     </div>
+    <form method="post" th:action="${'/cart/update'}">
 
-    <div class="Cart-Items">
-        <div class="image-box">
-            <img src="MyPage.images/ac1.jpg" style= "height:120px"  />
-        </div>
-        <div class="about">
-            <h1 class="title">Apple Juice</h1>
-            <!-- <h3 class="subtitle">250ml</h3> -->
-            <!-- <img src="MyPage.images/ac11.jpg" style= "height:30px" /> -->
-        </div>
-        <div class="counter">
-            <div class="btn">+</div>
-            <div class="count">2</div>
-            <div class="btn">-</div>
-        </div>
-        <div class="prices">
-            <div class="amount">2.99</div>
-            <!-- <div class="save"><u>Save for later</u></div> -->
-            <div class="remove"><u>Remove</u></div>
-        </div>
-    </div>
-
-    <div class="Cart-Items pad">
-        <div class="image-box">
-            <img src="MyPage.images/womenproduct15.jpg" style= "height:120px"  />
-        </div>
-        <div class="about">
-            <h1 class="title">Grapes Juice</h1>
-            <!-- <h3 class="subtitle">250ml</h3> -->
-            <!-- <img src="images/veg.png" style= "height:30px"  }}/> -->
-        </div>
-        <div class="counter">
-            <div class="btn">+</div>
-            <div class="count">1</div>
-            <div class="btn">-</div>
-        </div>
-        <div class="prices">
-            <div class="amount">3.19</div>
-            <!-- <div class="save"><u>Save for later</u></div> -->
-            <div class="remove"><u>Remove</u></div>
-        </div>
-    </div>
-    <hr>
-    <div class="checkout">
-        <div class="total">
-            <div>
-                <div class="Subtotal">Sub-Total</div>
-                <div class="items">2 items</div>
+        <div class="Cart-Items" th:each="item:${session.cart}">
+            <div class="image-box">
+                <img th:src="${item.getClothesEntity().getClothesImg()}" style="height:120px"/>
             </div>
-            <div class="total-amount">$6.18</div>
+            <div class="about">
+                <h1 class="title" th:text="${item.getClothesEntity().getClothesName()}"></h1>
+            </div>
+            <input type="number" id="quantity" name="quantity" min="0" value="1" th:value="${item.getQuantity()}">
+
+            <!--            <div class="prices">-->
+            <!--                <div class="amount" th:text="${item.getClothesEntity().getClothesPrice()}"></div>-->
+            <!--                &lt;!&ndash; <div class="save"><u>Save for later</u></div> &ndash;&gt;-->
+            <!--                <a th:href="@{'cart/remove'+item.getClothesEntity().getId()}" class="remove"><u>Remove</u></a>-->
+            <!--            </div>-->
         </div>
-        <button class="button">Checkout</button></div>
+    </form>
 </div>
 
+
+<hr>
+<!--<div class="checkout">-->
+<!--    <div class="total" th:each="item : ${session.cart}">-->
+<!--        <div>-->
+<!--            <div class="Subtotal">Sub-Total</div>-->
+<!--            <div class="items" th:text="${item.getQuantity()}">/div>-->
+<!--            </div>-->
+<!--            <div class="total-amount" th:text="${item.getClothesEntity().getClothesPrice() * item.getQuantity()}"></div>-->
+<!--        </div>-->
+<!--        <div class="Subtotal">Total <div id="total" th:text="${total}"> </div>-->
+
+<!--            <button class="button">Checkout</button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 
 </html>

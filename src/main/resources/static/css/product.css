@@ -108,15 +108,15 @@
    background-color:rgb(144, 55, 228);
      opacity: 1;
      transition: 0.3s all;
+     margin-bottom: 8px;
+
  }
 
 #best h3{
- 
     color:rgb(43, 40, 40);
     font-family: 'The Nautigal', cursive;
     font-weight: 600;
     font-size: 60px;
-  
 }
 
  .product .btn-dark{
@@ -133,7 +133,7 @@
   font-size: 15px;
 }
 .p-price{
-  font-size: 12px;
+  font-size: 22px;
 }
 
 

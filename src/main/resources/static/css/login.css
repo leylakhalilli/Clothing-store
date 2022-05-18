@@ -8,7 +8,9 @@
     box-sizing: border-box;
 
 }
-
+.error {
+    color: #d20303;
+}
 .logo {
     position: relative;
     color: rgb(108, 34, 177);
@@ -143,10 +145,21 @@ input {
     border-radius: 5px;
 }
 
-.alert {
-    padding: 20px;
-    background-color: #bb1106;
+/*.error {*/
+/*    padding: 20px;*/
+/*    background-color: #bb1106;*/
+/*    color: white;*/
+
+/*}*/
+/*.error:hover{*/
+/*    background-color: #936562;*/
+
+/*}*/
+
+.has-error{
     color: white;
+    font-weight: 700;
+    /*padding-left: 10px;*/
 }
 
 .closebtn {

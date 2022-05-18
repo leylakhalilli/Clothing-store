@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<!--</head>-->
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <script src="https://kit.fontawesome.com/44a5bc4613.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
+
+<style>
+   /*.adminProductImg{*/
+   /*    height: 300 px;*/
+   /*}*/
+
+   .adminProductImg{
+       width: 300px;
+   }
+
+</style>
 <body>
 
-<h1>Welcome</h1>
+<div class="container">
+    <table id="example" class="table table-bordered table-striped" style="width: 100%">
+        <thead>
+        <tr class=" table table-dark">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+<!--            <th>Image</th>-->
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pr : ${product}">
+            <td th:text="${pr.id}"/>
+            <td th:text="${pr.getClothesName()}"/>
+            <td th:text="${pr.getCategory()}"/>
+            <td th:text="${pr.getClothesPrice()}"/>
+<!--            <td><img class="adminProductImg" th:src="${pr.getClothesImg()}">-->
+<!--            <td/>-->
+            <td th:text="${pr.getDescription()}"/>
+
+
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+
+</html>
+
 
 <!--<input name="name" id="name">Name</input>-->
 <!--<input name="price" id="price">Price</input>-->
@@ -38,35 +96,7 @@
 <!--            dataType:"json"-->
 <!--        });-->
 
-
-
 <!--    })-->
 
-
-
-<!--</script>-->
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <td>Id</td>-->
-<!--        <td>Name</td>-->
-<!--        <td>Price</td>-->
-<!--        <td>Description</td>-->
-<!--        <td>material</td>-->
-
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr th:each="product:${products}">-->
-<!--        <td th:text="${product.id}">Id</td>-->
-<!--        <td th:text="${product.name}">Name</td>-->
-<!--        <td th:text="${product.price}">Price</td>-->
-<!--        <td th:text="${product.description}">Description</td>-->
-
-<!--        &lt;!&ndash;        <td th:text="${product.description}">Description</td>&ndash;&gt;-->
-
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
 </body>
 </html>

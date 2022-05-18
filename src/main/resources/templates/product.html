@@ -36,10 +36,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" th:classappend="${module == 'MyPage' ? 'active' : ''}">
-                    <a class="nav-link " th:href="@{/home}" >Home</a>
+                    <a class="nav-link " th:href="@{/home}">Home</a>
                 </li>
                 <li class="nav-item" th:classappend="${module == 'women' ? 'active' : ''}">
-                    <a class="nav-link " th:href="@{/women}" >Women</a>
+                    <a class="nav-link " th:href="@{/women}">Women</a>
                 </li>
                 <li class="nav-item" th:classappend="${module == 'men' ? 'active' : ''}">
                     <a class="nav-link" th:href="@{/men}">Men</a>
@@ -70,27 +70,27 @@
 <section class="container sproduct my-5 pt-5">
     <div class="row mt-5">
         <div class="col-lg-5 col-md-12 col-12">
-            <img id="MainImg" class="img-fluid w-100 pb-1" th:src="@{/img/tr1.jpg}" alt="image">
+            <img id="MainImg" class="img-fluid w-100 pb-1" th:src="${product.getClothesImg()}" alt="image">
 
-            <div class="small-img-group">
-                <div class="small-img-col">
-                    <img th:src="@{/img/tr1.1.jpg}" alt="image" width="100%" class="small-img">
-                </div>
-                <div class="small-img-col">
-                    <img th:src="@{/img/tr1.2.jpg}" alt="image" width="100%" class="small-img">
-                </div>
-                <div class="small-img-col">
-                    <img th:src="@{/img/tr1.3.jpg}" alt="image" width="100%" class="small-img">
-                </div>
+            <!--            <div class="small-img-group">-->
+            <!--                <div class="small-img-col">-->
+            <!--                    <img th:src="@{/img/tr1.1.jpg}" alt="image" width="100%" class="small-img">-->
+            <!--                </div>-->
+            <!--                <div class="small-img-col">-->
+            <!--                    <img th:src="@{/img/tr1.2.jpg}" alt="image" width="100%" class="small-img">-->
+            <!--                </div>-->
+            <!--                <div class="small-img-col">-->
+            <!--                    <img th:src="@{/img/tr1.3.jpg}" alt="image" width="100%" class="small-img">-->
+            <!--                </div>-->
 
-            </div>
+            <!--            </div>-->
 
         </div>
 
         <div class="col-lg-6 col-md-12 col-12">
 
-            <h3 class="py-4">T-Shirt-Black-Oversize</h3>
-            <h2>29.99</h2>
+            <h3 class="py-4" th:text="${product.getClothesName()}"/>
+            <h2 class="p-price" th:text="${product.getClothesPrice()}"/>
             <select class="my-3">
                 <option>Select Size</option>
                 <option>XL</option>
@@ -99,80 +99,80 @@
                 <option>Small</option>
             </select>
             <input type="number" id="quantity" name="quantity" min="0" value="1">
-            <button class="btn btn-dark">Add To Cart</button>
+
+            <a th:href="${'cart/buy/'+ product.getId()}">
+                <button class="btn btn-dark">Add To Cart</button>
+            </a>
+
             <h4 class="mt-5 mb-5">Product Details</h4>
-            <span>Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Inventore quis, odio,
-          nam ducimus maxime unde consequuntur tenetur iste
-          maiores porro explicabo ipsa aliquam dolore alias!
-          Consectetur deserunt, debitis eligendi quam esse aspernatur.
-          Eaque itaque necessitatibus possimus aperiam.
-          Ducimus corrupti debitis quibusdam molestiae dolorum eos,
-          voluptatibus suscipit perferendis?
-        </span>
+            <span th:text="${product.getDescription()}"/>
+
 
         </div>
     </div>
 </section>
 
-
 <section id="best" class="my-5 pb-5">
     <div class="container text-center mt-5 py-5">
-        <h3>Related Product</h3>
+        <h3>Similar Product</h3>
     </div>
     <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/tr8.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Sweatpants-Gray-Regular</h5>
-            <h5 class="p-price">109.99</h5>
-            <button class="btn btn-dark">Buy Now</button>
+        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="params : ${products}"
+             th:if="${params.getClothesCategory()} == ${product.getCategory()}">
+            <a style="text-decoration:none;color: #0f0700"
+               th:href="${'/product/'+params.getId()+'/type/'+ params.getClothesCategory()}">
+                <img class="img-fluid mb-3" th:src="${params.getClothesImg()}" width="250">
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <h5 class="p-name" th:text="${params.getClothesName()}"/>
+                <h4 class="p-price" th:text="${params.getClothesPrice()}"/>
+                <button class="btn btn-dark">Buy Now</button>
+            </a>
         </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/tr4.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Sweatshirt-Black-Regular</h5>
-            <h4 class="p-price">30</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/tr2.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">T-Shirt-White-Oversize</h5>
-            <h4 class="p-price">69.95</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-            <img class="img-fluid mb-3" th:src="@{/img/tr5.jpg}" width="250">
-            <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            </div>
-            <h5 class="p-name">Jeans-Black-Slim Fit</h5>
-            <h4 class="p-price">75</h4>
-            <button class="btn btn-dark">Buy Now</button>
-        </div>
+        <!--        <div class="product text-center col-lg-3 col-md-4 col-12">-->
+        <!--            <img class="img-fluid mb-3" th:src="@{/img/tr4.jpg}" width="250">-->
+        <!--            <div class="star">-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--            </div>-->
+        <!--            <h5 class="p-name">Sweatshirt-Black-Regular</h5>-->
+        <!--            <h4 class="p-price">30</h4>-->
+        <!--            <button class="btn btn-dark">Buy Now</button>-->
+        <!--        </div>-->
+        <!--        <div class="product text-center col-lg-3 col-md-4 col-12">-->
+        <!--            <img class="img-fluid mb-3" th:src="@{/img/tr2.jpg}" width="250">-->
+        <!--            <div class="star">-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--            </div>-->
+        <!--            <h5 class="p-name">T-Shirt-White-Oversize</h5>-->
+        <!--            <h4 class="p-price">69.95</h4>-->
+        <!--            <button class="btn btn-dark">Buy Now</button>-->
+        <!--        </div>-->
+        <!--        <div class="product text-center col-lg-3 col-md-4 col-12">-->
+        <!--            <img class="img-fluid mb-3" th:src="@{/img/tr5.jpg}" width="250">-->
+        <!--            <div class="star">-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--                <i class="bi bi-star-fill"></i>-->
+        <!--            </div>-->
+        <!--            <h5 class="p-name">Jeans-Black-Slim Fit</h5>-->
+        <!--            <h4 class="p-price">75</h4>-->
+        <!--            <button class="btn btn-dark">Buy Now</button>-->
+        <!--        </div>-->
     </div>
 </section>
 

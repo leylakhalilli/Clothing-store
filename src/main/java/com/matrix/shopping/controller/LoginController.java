@@ -37,21 +37,27 @@ public class LoginController {
 
     @GetMapping("/registration")
     public String registration(Model model) {
-//        if (securityService.isAuthenticated()) {
-//            return "redirect:/";
-//        }
-        model.addAttribute("userForm", new UserEntity());
+        if (securityService.isAuthenticated()) {
+            return "redirect:/";
+        }
+        model.addAttribute( "userForm", new UserEntity());
         return "registration";
     }
 
-    @PostMapping("/registration")
+    @PostMapping(value = "/registration")
     public String registration(@ModelAttribute("userForm") UserEntity userForm, BindingResult bindingResult) {
         userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()) {
             return "registration";
         }
         userService.save(userForm);
-        securityService.autoLogin(userForm.getUserName(),userForm.getPassword());
+        securityService.autoLogin(userForm.getUsername(), userForm.getPassword());
         return "redirect:/";
+
+    }
+
+    @GetMapping({"/", "/welcome"})
+    public String welcome(Model model) {
+        return "welcome";
     }
 }

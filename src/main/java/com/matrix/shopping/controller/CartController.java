@@ -4,7 +4,9 @@ import com.matrix.shopping.dao.entity.Cart;
 import com.matrix.shopping.service.ClothesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +26,7 @@ public class CartController {
     @RequestMapping(method = RequestMethod.GET)
     public String index(ModelMap modelMap, HttpSession session) {
         modelMap.put("total", total(session));
+
         return "/cart";
     }
 
@@ -48,11 +51,19 @@ public class CartController {
         return -1;
     }
 
+//    @GetMapping("/cart")
+//    public String cart(Model model) {
+//        var productEntities = clothesService.getClothesMen();
+//        return "cart";
+//    }
 
-    @RequestMapping(value = "buy/{id}", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/buy/{id}", method = RequestMethod.GET)
     public String buy(@PathVariable("id") int id, ModelMap modelMap, HttpServletRequest request) {
         HttpSession session = request.getSession();
+
         if (session.getAttribute("cart") == null) {
+
             List<Cart> carts = new ArrayList<Cart>();
             carts.add(new Cart(clothesService.findById(id), 1));
             session.setAttribute("cart", carts);
@@ -70,7 +81,6 @@ public class CartController {
 
         }
         return "redirect:/cart";
-
     }
 
     @RequestMapping(value = "update", method = RequestMethod.POST)
@@ -86,36 +96,36 @@ public class CartController {
 
     }
 
-    @RequestMapping(value = "clear",method = RequestMethod.GET)
-    public String clear(HttpServletRequest request){
-        HttpSession session=request.getSession();
-        List<Cart> carts= (List<Cart>) session.getAttribute("cart");
+    @RequestMapping(value = "clear", method = RequestMethod.GET)
+    public String clear(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        List<Cart> carts = (List<Cart>) session.getAttribute("cart");
         carts.clear();
-        session.setAttribute("cart",carts);
+        session.setAttribute("cart", carts);
         return "redirect:/cart";
 
     }
 
-    @RequestMapping(value = "remove/{id}",method = RequestMethod.GET)
-    public String remove(@PathVariable("id") int id,HttpServletRequest request){
+    @RequestMapping(value = "remove/{id}", method = RequestMethod.GET)
+    public String remove(@PathVariable("id") int id, HttpServletRequest request) {
 
-        HttpSession session=request.getSession();
-        List<Cart> carts= (List<Cart>) session.getAttribute("cart");
-        int index=isExits(id,carts);
+        HttpSession session = request.getSession();
+        List<Cart> carts = (List<Cart>) session.getAttribute("cart");
+        int index = isExits(id, carts);
         carts.remove(index);
-        session.setAttribute("cart",carts);
+        session.setAttribute("cart", carts);
         return "redirect:/cart";
 
     }
-
-    @RequestMapping(value = "checkout",method = RequestMethod.GET)
-    public String checkout(HttpSession session){
-        if (session.getAttribute("username") == null) {
-            return "redirect:/login";
-        } else {
-            return "redirect:/cart";
-        }
-    }
+//
+//    @RequestMapping(value = "checkout", method = RequestMethod.GET)
+//    public String checkout(HttpSession session) {
+//        if (session.getAttribute("username") == null) {
+//            return "redirect:/login";
+//        } else {
+//            return "redirect:/cart";
+//        }
+//    }
 
 
 }
