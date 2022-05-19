@@ -33,7 +33,7 @@ public class AdminController {
         return "addProduct";
     }
 
-    @GetMapping("/editproduct/{id}")
+    @GetMapping("/editProduct/{id}")
     public String editProduct(@PathVariable Integer id, Model model) {
         ClothesEntity clothesEntity = clothesService.getClothesParametr(id);
         model.addAttribute("product", clothesEntity);
@@ -41,14 +41,14 @@ public class AdminController {
         return "editProduct";
     }
 
-    @GetMapping("/saveproduct")
+    @GetMapping("/saveProduct")
     public String saveProduct(ClothesEntity clothesEntity) {
         clothesService.saveProduct(clothesEntity);
         return "redirect:/admin";
 
     }
 
-    @GetMapping("/deleteproduct/{id}")
+    @GetMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable Integer id) {
         clothesService.deleteProduct(id);
         return "redirect:/admin";

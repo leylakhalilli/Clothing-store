@@ -1,0 +1,47 @@
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800.900&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&family=Yellowtail&display=swap');*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.container {
+    margin: 0 20px 0 20px;
+}
+
+.logo {
+    position: relative;
+    color: rgb(108, 34, 177);
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
+}
+
+.header {
+    margin: 20px;
+    text-align: center;
+    /*background-color: #c867e8;*/
+}
+
+.product {
+    width: 500px;
+    height: 500px;
+    margin: 45px 0 65px 10px;
+    /*background-color: rgb(154, 67, 241);*/
+    /*padding-left: 100px;*/
+    border-radius: 25px;
+    padding: 30px 0 70px 60px;
+
+}
+
+input {
+
+    height: 35px;
+    width: 220px;
+    /*margin-left: 150px;*/
+}
+

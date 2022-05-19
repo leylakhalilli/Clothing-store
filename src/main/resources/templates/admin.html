@@ -11,29 +11,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin</title>
-    <script src="https://kit.fontawesome.com/44a5bc4613.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&display=swap"
+          rel="stylesheet">
 
 </head>
 
 <style>
-   /*.adminProductImg{*/
-   /*    height: 300 px;*/
-   /*}*/
+    .container {
+        margin-top: 20px;
+    }
 
-   .adminProductImg{
-       width: 300px;
-   }
+    .logo {
+        position: relative;
+        color: rgb(108, 34, 177);
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Dancing Script', cursive;
+    }
 
+    .header {
+        margin: 20px;
+        text-align: center;
+        /*background-color: #c867e8;*/
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        /*padding-left: 10px;*/
+        margin-left: 10px;
+    }
+
+    .button:hover {
+        background-color: rgb(170, 8, 8);
+    }
+
+    a {
+        text-decoration: none;
+    }
 </style>
 <body>
 
 <div class="container">
+    <div class="header">
+        <h1 class="logo">Crépuscule</h1>
+        <h4>for managers</h4>
+        <!--        <h3>Add new Product</h3>-->
+    </div>
     <table id="example" class="table table-bordered table-striped" style="width: 100%">
         <thead>
         <tr class=" table table-dark">
@@ -41,7 +67,7 @@
             <th>Name</th>
             <th>Category</th>
             <th>Price</th>
-<!--            <th>Image</th>-->
+            <!--            <th>Image</th>-->
             <th>Description</th>
         </tr>
         </thead>
@@ -51,20 +77,28 @@
             <td th:text="${pr.getClothesName()}"/>
             <td th:text="${pr.getCategory()}"/>
             <td th:text="${pr.getClothesPrice()}"/>
-<!--            <td><img class="adminProductImg" th:src="${pr.getClothesImg()}">-->
-<!--            <td/>-->
+            <!--            <td><img class="adminProductImg" th:src="${pr.getClothesImg()}">-->
+            <!--            <td/>-->
             <td th:text="${pr.getDescription()}"/>
+            <td class="buttons">
+                <a th:href="@{/admin/addproduct}">
+                    <button class="button btn-dark">Add</button>
+                </a>
 
+                <a th:href="${'/admin/editproduct/' + pr.id}">
+                    <button class="button btn-dark">Edit</button>
+                </a>
 
-
+                <a th:href="${'/admin/deleteproduct/' + pr.id}">
+                    <button class="button btn-dark" name="delete">Delete</button>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
 
 </div>
-</body>
 
-</html>
 
 
 <!--<input name="name" id="name">Name</input>-->

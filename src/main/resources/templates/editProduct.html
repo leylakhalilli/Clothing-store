@@ -2,9 +2,40 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit</title>
+    <title>Admin Edit page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link th:href="@{/css/adminPage.css}" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
+<div class="container">
+    <div class="header">
+        <h1 class="logo">Crépuscule</h1>
+        <h5>for managers</h5>
 
+    </div>
+
+    <div class="product">
+        <form action="/admin/saveproduct" method="post">
+            <h5>Edit Product</h5>
+            <br>
+            <input th:value="${product.id}" type="hidden" name="id" placeholder="Product id">
+            <input th:value="${product.getClothesName()}" type="text" name="name" placeholder="Product name">
+            Name</input><br>
+            <br>
+            <input th:value="${product.getClothesPrice()}" type="number" name="price" placeholder="Product price">
+            Price</input><br>
+            <br>
+            <input th:value="${product.getClothesImg()}" type="text" name="image" placeholder="Product image">
+            Image</input><br>
+            <br>
+            <input th:value="${product.category}" type="text" name="category" placeholder="Product category">
+            Category</input><br>
+            <br>
+            <input type="submit" name="submit" value="submit"/>
+        </form>
+    </div>
+</div>
 </body>
 </html>
