@@ -11,16 +11,16 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    //    @Qualifier("userDetailsServiceImpl")
     @Autowired
-    private UserDetailsService userDetailsService;
+    private UserService userService;
+    @Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
 
     @Bean
@@ -33,24 +33,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
 //                .antMatchers("/admin/products","/addNewProduct","/editProduct/**").hasRole("admin")
 
-                .antMatchers("/css/**", "/js/**", "/img/**", "/about", "/home", "/mypage", "/men", "/women", "/accessories",
+                .antMatchers("/css/**", "/js/**", "/img/**", "/home", "/mypage", "/men", "/women", "/accessories",
                         "/registration", "/contact**", "/product/{clothesId}/type/{clothesCategory}",
                         "cart/buy/{id}", "cart/**", "cart/remove/**", "cart/update/**", "cart",
                         "/admin", "/admin/**", "/addproduct", "/editProduct/{id}",
                         "/admin/saveProduct", "/deleteProduct/{id}").permitAll()
-//                .and()
-//                .authorizeRequests()
-                .antMatchers("/", "/welcome").hasRole("USER")
-//                .anyRequest().authenticated()
-                .anyRequest().authenticated()
+                .antMatchers("/", "/welcome", "/addproduct").hasRole("USER")
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .loginProcessingUrl("/authenticateTheUser")
+                .successHandler(customAuthenticationSuccessHandler)
                 .permitAll()
                 .and()
-                .logout()
-                .permitAll()
-        ;
+                .logout().permitAll();
     }
 
     @Bean
@@ -60,6 +56,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
+        auth.userDetailsService(userService).passwordEncoder(bCryptPasswordEncoder());
     }
 }
