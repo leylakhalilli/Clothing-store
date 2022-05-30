@@ -50,7 +50,7 @@ public class LoginController {
     }
 
     @PostMapping("/registration")
-    public String registration(@ModelAttribute("userForm") UserEntity userForm, BindingResult bindingResult) {
+    public String registration(@ModelAttribute("userForm") UserDto userForm, BindingResult bindingResult) {
         userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()) {
             return "registration";
