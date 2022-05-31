@@ -1,6 +1,4 @@
 package com.matrix.shopping.config;
-
-
 import com.matrix.shopping.dao.entity.login.UserEntity;
 import com.matrix.shopping.service.login.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

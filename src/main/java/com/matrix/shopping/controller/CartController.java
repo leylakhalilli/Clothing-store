@@ -19,16 +19,18 @@ import java.util.List;
 @Controller
 @RequestMapping("cart")
 public class CartController {
-    @Autowired
-    private ClothesService clothesService;
+//    @Autowired
+//    private ClothesService clothesService;
 
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(ModelMap modelMap, HttpSession session) {
         modelMap.put("total", total(session));
-
         return "/cart";
     }
+
+    @Autowired
+    private ClothesService clothesService;
 
     private double total(HttpSession session) {
         List<Cart> carts = (List<Cart>) session.getAttribute("cart");

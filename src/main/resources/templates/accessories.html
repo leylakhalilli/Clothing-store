@@ -77,8 +77,8 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
             </div>
-            <h5 class="p-name">T-Shirt-Brown-Oversize</h5>
-            <h4 class="p-price">29.99</h4>
+            <h5 class="p-name" th:text="${params.getClothesName()}" >T-Shirt-Brown-Oversize</h5>
+            <h4 class="p-price" th:text="${params.getClothesPrice()}"></h4>
             <button class="btn btn-dark">Buy Now</button>
         </div>
 <!--        <div class="product text-center col-lg-3 col-md-4 col-12">-->

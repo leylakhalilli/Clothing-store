@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <title>Welcome</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--  <link rel="stylesheet" href="css/product.css" />-->
-<!--    <link th:href="@{/css/product.css}" rel="stylesheet"/>-->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -25,7 +24,30 @@
 </head>
 
 <body>
-             <h1>WELCOME</h1>
-</nav>
+
+<section id="home2">
+    <div class="container">
+        <h1><span>Welcome</span></h1>
+    </div>
+</section>
+
+
+<!--             <h1>WELCOME</h1>-->
+<!--<div class="login">-->
+<!--    <section class="sign-in">-->
+<!--        <div class="container">-->
+
+<!--            <div class="signin-content">-->
+<!--                <div sec:authorize="isAuthenticated()">-->
+<!--                    <form id="logoutForm" method="POST" th:action="@{/logout}">-->
+<!--                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+<!--                    </form>-->
+<!--                    <h2>Welcome!</h2>-->
+<!--                    <a> <span sec:authentication="name"></span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</div>-->
 </body>
 </html>

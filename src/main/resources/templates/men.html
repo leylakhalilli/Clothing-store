@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link th:href="@{/css/menPage.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -80,8 +82,8 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
             </div>
-            <h5 class="p-name">T-Shirt-Brown-Oversize</h5>
-            <h4 class="p-price">29.99</h4>
+            <h5 th:text="${params.getClothesName()}" class="p-name"></h5>
+            <h4  th:text="${params.getClothesPrice()}" class="p-price"></h4>
             <button class="btn btn-dark">Buy Now</button>
         </div>
 
