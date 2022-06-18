@@ -8,17 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ClothesRepository extends JpaRepository<ClothesEntity, Integer> {
-//    List<ClothesEntity> findAll();
-////
-////
-////    @Query(value = "SELECT *from clothes where clothes_category='WOMEN'", nativeQuery = true)
-////    List<ClothesEntity> findByCategoryWomen();
-//
-//    @Query(value = "SELECT *from clothes where clothes_category='MEN'", nativeQuery = true)
-//    List<ClothesEntity> findByCategoryMen();
-//
-//    @Query(value = "SELECT *from clothes where clothes_category='ACCESSORIES'", nativeQuery = true)
-//    List<ClothesEntity> findByCategoryAccessories();
 
     @Query(value = "SELECT * FROM  clothes"
             + " WHERE clothes_category='WOMEN'" +

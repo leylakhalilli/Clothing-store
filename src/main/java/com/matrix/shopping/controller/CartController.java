@@ -60,7 +60,7 @@ public class CartController {
 //    }
 
 
-    @RequestMapping(value = "/buy/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "buy/{id}", method = RequestMethod.GET)
     public String buy(@PathVariable("id") int id, ModelMap modelMap, HttpServletRequest request) {
         HttpSession session = request.getSession();
 
@@ -119,7 +119,7 @@ public class CartController {
         return "redirect:/cart";
 
     }
-//
+
 //    @RequestMapping(value = "checkout", method = RequestMethod.GET)
 //    public String checkout(HttpSession session) {
 //        if (session.getAttribute("username") == null) {

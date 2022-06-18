@@ -90,7 +90,7 @@ body{
 
 .CartContainer{
     margin-top: 100px;
-    width: 70%;
+    width: 100%;
     height: 90%;
     background-color: #ffffff;
     border-radius: 20px;
@@ -136,15 +136,16 @@ body{
 }
 .about{
     height: 100%;
-    width: 24%;
+    width: 54%;
 }
 .title{
     padding-top: 10px;
     line-height: 10px;
-    font-size: 2.222vw;
+    font-size: 20px;
     font-family: 'Open Sans';
     font-weight: 800;
     color: #202020;
+
 }
 .subtitle{
     line-height: 10px;
@@ -229,20 +230,20 @@ hr{
     justify-content: space-between;
 }
 .Subtotal{
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Open Sans';
     font-weight: 700;
     color: #202020;
 }
 .items{
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Open Sans';
     font-weight: 500;
     color: #909090;
     line-height: 10px;
 }
 .total-amount{
-    font-size: 36px;
+    font-size: 20px;
     font-family: 'Open Sans';
     font-weight: 900;
     color: #202020;
@@ -257,6 +258,6 @@ hr{
     cursor: pointer;
     font-size: 16px;
     font-family: 'Open Sans';
-    font-weight: 600;
-    color: #202020;
+    font-weight: 400;
+    color:black;
 }

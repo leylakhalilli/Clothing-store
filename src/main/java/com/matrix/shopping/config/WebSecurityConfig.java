@@ -22,7 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
-
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -35,9 +34,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers("/css/**", "/js/**", "/img/**", "/home", "/mypage", "/men", "/women", "/accessories",
                         "/registration", "/contact**", "/product/{clothesId}/type/{clothesCategory}",
-                        "/admin", "/admin/**",  "/editProduct/{id}",
-                        "/admin/saveProduct", "/deleteProduct/{id}","/", "/welcome").permitAll()
-                .antMatchers(  "cart/buy/{id}", "cart/**", "cart/remove/**", "cart/update/**", "cart","/addproduct").hasRole("USER")
+                        "/admin", "/admin/**", "/editProduct/{id}", "/admin/saveProduct", "/deleteProduct/{id}").permitAll()
+                .antMatchers("/welcome", "cart/buy/{id}", "cart/**", "cart/remove/**","cart/checkout/**",
+                        "cart/update/**", "cart", "/addproduct").hasRole("USER")
                 .and()
                 .formLogin()
                 .loginPage("/login")

@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <h2 class="logo">crépuscule</h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="  false" aria-label="Toggle navigation">
             <span><i id="bar" class="fas fa-bars"></i></span>
         </button>
 
@@ -63,7 +63,7 @@
 <div class="CartContainer">
     <div class="Header">
         <h3 class="Heading">Shopping Cart</h3>
-        <a th:href="@{'/cart/clear'}" class="Action">Remove all</a>
+        <a th:href="@{'cart/clear'}" class="Action">Remove all</a>
     </div>
     <form method="post" th:action="${'/cart/update'}">
 
@@ -74,33 +74,55 @@
             <div class="about">
                 <h1 class="title" th:text="${item.getClothesEntity().getClothesName()}"></h1>
             </div>
-            <input type="number" id="quantity" name="quantity" min="0" value="1" th:value="${item.getQuantity()}">
 
-            <!--            <div class="prices">-->
-            <!--                <div class="amount" th:text="${item.getClothesEntity().getClothesPrice()}"></div>-->
-            <!--                &lt;!&ndash; <div class="save"><u>Save for later</u></div> &ndash;&gt;-->
-            <!--                <a th:href="@{'cart/remove'+item.getClothesEntity().getId()}" class="remove"><u>Remove</u></a>-->
-            <!--            </div>-->
+
+            <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 50px;"
+                   th:value="${item.getQuantity()}">
+            <input type="submit" value="OK" style="background-color:wheat "/>
+
+
+            <div class="prices">
+                <div class="amount" th:text="${item.getClothesEntity().getClothesPrice()}"></div>
+                <!-- <div class="save"><u>Save for later</u></div> -->
+                <a class="remove" th:href="${'cart/remove/'+ item.getClothesEntity().getId()}"><u>Remove</u></a>
+
+            </div>
         </div>
     </form>
-</div>
 
 
-<hr>
-<!--<div class="checkout">-->
-<!--    <div class="total" th:each="item : ${session.cart}">-->
-<!--        <div>-->
-<!--            <div class="Subtotal">Sub-Total</div>-->
-<!--            <div class="items" th:text="${item.getQuantity()}">/div>-->
-<!--            </div>-->
-<!--            <div class="total-amount" th:text="${item.getClothesEntity().getClothesPrice() * item.getQuantity()}"></div>-->
-<!--        </div>-->
-<!--        <div class="Subtotal">Total <div id="total" th:text="${total}"> </div>-->
+    <hr>
+    <div class="checkout">
+        <div class="total" th:each="item : ${session.cart}">
+            <div>
+                <div class="Subtotal">Sub-Total</div>
+                <!--                <div class="items" th:text="${item.getQuantity()}" ></div>-->
+            </div>
+            <div class="total-amount"
+                 th:text="${item.getClothesEntity().getClothesPrice() * item.getQuantity()}"></div>
+        </div>
 
-<!--            <button class="button">Checkout</button>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</div>-->
+
+        <div class="Subtotal">Total
+            <div id="total" th:text="${total}"></div>
+
+            <button class="button"><a style=" text-decoration: none;font-size:23px; color:  #5b2a02;font-weight: 900"
+                                      id="check">Confirm cart</a></button>
+
+            <!--            <a class="button" th:href="${'cart/checkout/'}">Checkout</a>-->
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("check").onclick = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            alert("Your orders have been sent!");
+        }
+    </script>
 </body>
 
 </html>

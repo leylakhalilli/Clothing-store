@@ -1,5 +1,6 @@
 package com.matrix.shopping.controller;
 
+import com.matrix.shopping.enums.ClothesCategory;
 import com.matrix.shopping.service.ClothesService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,7 @@ public class ClothesController {
         model.addAttribute("womenparametr", clothesService.getByCategoryWomen());
         model.addAttribute("menparametr", clothesService.getByCategoryMen());
         model.addAttribute("accparametr", clothesService.getByCategoryAccessories());
+
         model.addAttribute("showwomen", clothesService.getClothesWomen());
         model.addAttribute("showmen", clothesService.getClothesMen());
         model.addAttribute("showacc", clothesService.getClothesAccessories());
@@ -30,7 +32,7 @@ public class ClothesController {
 
 
     @GetMapping("/product/{clothesId}/type/{clothesCategory}")
-    public String product(Model model, @PathVariable Integer clothesId, String clothesCategory) {
+    public String product(Model model, @PathVariable Integer clothesId, ClothesCategory clothesCategory) {
         model.addAttribute("product", clothesService.findById(clothesId));
         model.addAttribute("products", clothesService.getClothesParametr());
         return "product";

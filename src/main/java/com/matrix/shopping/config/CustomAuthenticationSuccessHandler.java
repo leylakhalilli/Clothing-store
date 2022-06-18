@@ -26,7 +26,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 		String userName = authentication.getName();
 		
-		System.out.println("userName=" + userName);
+//		System.out.println("userName=" + userName);
 
 		UserEntity theUser = userService.findByUserName(userName);
 		
