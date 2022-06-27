@@ -6,6 +6,7 @@
     <link th:href="@{/css/adminPage.css}" rel="stylesheet" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -18,8 +19,8 @@
     <div class="product">
         <h5>Add new Product</h5>
         <br>
-<!--        <form th:action="@{saveProduct}" method="post">-->
-        <form action="/admin/saveProduct" method="post">
+        <!--        <form th:action="@{saveProduct}" method="post">-->
+        <form th:action="@{saveProduct}" method="post">
 
             <input type="text" name="id" placeholder="Product id"> ID</input><br>
             <br>
@@ -30,9 +31,36 @@
             <!--        <input type="text" name="image" placeholder="product image">Image</input><br>-->
             <input type="text" name="category" placeholder="Product category"> Category</input><br>
             <br>
-            <input type="submit" name="submit" value="submit"/>
+            <button id="button">Submit</button>
         </form>
     </div>
 </div>
+
 </body>
+<script>
+
+    $("#button").click(function () {
+        // alert("hiiii")
+
+        var name = $("#name").val()
+        var price = $("#price").val()
+        var description = $("#description").val()
+
+        var data = {}
+        data.name = name
+        data.price = price
+        data.description = description
+        console.log(data)
+
+        $ajax({
+            type: "POST",
+            url: "http://localhost:8081/admin/saveProduct",
+            data: JSON.stringify(data),
+            success: true,
+            contentType: "application/json",
+            dataType: "json"
+        });
+
+    })
+</script>
 </html>

@@ -13,19 +13,20 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminController {
+public class AdminPageController {
     private ClothesService clothesService;
 
     @Autowired
-    public AdminController(ClothesService clothesService) {
+    public AdminPageController(ClothesService clothesService) {
         this.clothesService = clothesService;
     }
+
 
     @GetMapping({"", "/"})
     public String findAll(Model model) {
         List<ClothesEntity> clothesEntityList = clothesService.findAll();
         model.addAttribute("product", clothesEntityList);
-        return "admin";
+        return "adminPage";
     }
 
     @GetMapping("/addproduct")

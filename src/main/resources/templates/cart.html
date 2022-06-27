@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <title>My Website</title>
@@ -60,7 +60,7 @@
     </div>
 </nav>
 
-<div class="CartContainer">
+<div class="CartContainer" sec:authorize="hasRole('ROLE_USER')">
     <div class="Header">
         <h3 class="Heading">Shopping Cart</h3>
         <a th:href="@{'cart/clear'}" class="Action">Remove all</a>
@@ -92,7 +92,7 @@
 
 
     <hr>
-    <div class="checkout">
+    <div class="checkout" >
         <div class="total" th:each="item : ${session.cart}">
             <div>
                 <div class="Subtotal">Sub-Total</div>

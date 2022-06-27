@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <!--<head>-->
 <!--    <meta charset="UTF-8">-->
 <!--    <title>Title</title>-->
@@ -54,7 +54,7 @@
 </style>
 <body>
 
-<div class="container">
+<div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
     <div class="header">
         <h1 class="logo">Crépuscule</h1>
         <h4>for managers</h4>
@@ -98,8 +98,6 @@
     </table>
 
 </div>
-
-
 
 <!--<input name="name" id="name">Name</input>-->
 <!--<input name="price" id="price">Price</input>-->

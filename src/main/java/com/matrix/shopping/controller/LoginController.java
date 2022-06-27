@@ -31,7 +31,7 @@ public class LoginController {
         }
 
         if (error != null) {
-                model.addAttribute("error", "Invalid username or password,please verify your credentials.");
+            model.addAttribute("error", "Invalid username or password,please verify your credentials.");
         }
 
         if (logout != null)
@@ -45,7 +45,7 @@ public class LoginController {
         if (securityService.isAuthenticated()) {
             return "redirect:/";
         }
-        model.addAttribute( "userForm", new UserEntity());
+        model.addAttribute("userForm", new UserEntity());
         return "registration";
     }
 
@@ -60,9 +60,13 @@ public class LoginController {
         return "redirect:/";
     }
 
-    @GetMapping({"/", "/welcome"})
-    public String welcome(Model model) {
-        return "welcome";
-    }
+
+
+//    @GetMapping("/access-denied")
+//    public String showAccessDenied() {
+//
+//        return "access-denied";
+//
+//    }
 
 }

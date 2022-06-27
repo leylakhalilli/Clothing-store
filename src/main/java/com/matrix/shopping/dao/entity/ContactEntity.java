@@ -18,7 +18,6 @@ public class ContactEntity {
     private String message;
 
     public ContactEntity(String name, String email, String phone, String message) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;

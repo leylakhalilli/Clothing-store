@@ -33,10 +33,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/admin/products","/addNewProduct","/editProduct/**").hasRole("admin")
 
                 .antMatchers("/css/**", "/js/**", "/img/**", "/home", "/mypage", "/men", "/women", "/accessories",
-                        "/registration", "/contact**", "/product/{clothesId}/type/{clothesCategory}",
-                        "/admin", "/admin/**", "/editProduct/{id}", "/admin/saveProduct", "/deleteProduct/{id}").permitAll()
-                .antMatchers("/welcome", "cart/buy/{id}", "cart/**", "cart/remove/**","cart/checkout/**",
-                        "cart/update/**", "cart", "/addproduct").hasRole("USER")
+                        "/registration", "/contact**", "/product/{clothesId}/type/{clothesCategory}").permitAll()
+
+                .antMatchers("/welcome", "cart/buy/{id}", "cart/**", "cart/remove/**", "cart/checkout/**",
+                        "cart/update/**", "cart").hasRole("USER")
+
+                .antMatchers("/admin", "/admin/**", "/editProduct/{id}", "/saveProduct",
+                        "/deleteProduct/{id}", "/addproduct","/forAdmin").hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -44,7 +47,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(customAuthenticationSuccessHandler)
                 .permitAll()
                 .and()
-                .logout().permitAll();
+                .logout().permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/access-denied");
+
     }
 
     @Bean

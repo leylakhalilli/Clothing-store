@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title>Crepuscule Home Page</title>
+</head>
+
+<body>
+<h2>Crepuscule Home Page</h2>
+<hr>
+
+<p>
+    Welcome to the Crepuscule home page!
+</p>
+
+<hr>
+
+<!-- display user name and role -->
+
+<div>
+    User: <span sec:authentication="name"></span>
+    <br><br>
+    Role(s): <span sec:authentication="principal.authorities"></span>
+    <br><br>
+
+
+</div>
+
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+
+    <p>
+        <a th:href="@{/admin}">Admin Page</a>
+        (Only for Admin)
+    </p>
+
+</div>
+
+<hr>
+
+<!-- Add a logout button -->
+<form th:action="@{/logout}"
+      method="POST">
+
+    <input type="submit" value="Logout"/>
+
+</form>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
