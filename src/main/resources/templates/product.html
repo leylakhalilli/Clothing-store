@@ -109,14 +109,16 @@
         </div>
     </div>
 </section>
+
+
 <!--Similar product-->
 <section id="best" class="my-5 pb-5">
     <div class="container text-center mt-5 py-5">
-        <h3>Similar Product</h3>
+<!--        <h3>Similar Product</h3>-->
     </div>
     <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="params : ${products}">
-<!--             th:if="${params.getClothesCategory()} == ${product.getCategory}">-->
+        <div class="product text-center col-lg-3 col-md-4 col-12" th:each="params : ${products}"
+             th:if="${params.getClothesCategory()} == ${product.getCategory}">
             <a style="text-decoration:none;color: #0f0700"
                th:href="${'/product/'+params.getId() + '/type/' + params.getClothesCategory()}">
                 <img class="img-fluid mb-3" th:src="${params.getClothesImg()}" width="250">

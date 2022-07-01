@@ -137,14 +137,14 @@
             data.message = message
 
 
-            // alert("helloooo")
+            alert("helloooo")
 
             console.log(data)
 
             $.ajax(
                 {
                     url: '/contact/',
-                    type: 'POST',  // http method
+                    type: 'POST', // http method
                     data: JSON.stringify(data),  // data to submit
                     dataType: 'json',
                     contentType: "application/json"
@@ -154,58 +154,33 @@
         });
 
     })
-    //
+
+
+
     // $(document).ready(function () {
     //
-    //     $("#search-form").submit(function (event) {
+    //     $("#contact-form").submit(function (event) {
     //
-    //
+    //         // do not post the form and trigger full page refresh
     //         event.preventDefault();
     //
-    //         fire_ajax_submit();
+    //         var formData = ..  // construct some formData
     //
+    //         $.ajax({
+    //             type: "POST",
+    //             contentType: "application/json",
+    //             url: "/homePage/contact",
+    //             data: JSON.stringify(formData),
+    //             dataType: "json",
+    //             success: function (data) {
+    //                 console.log("SUCCESS : ", data);
+    //             },
+    //             error: function (e) {
+    //                 console.log("ERROR : ", e);
+    //             }
+    //         });
     //     });
-    //
     // });
-    //
-    // function fire_ajax_submit() {
-    //
-    //     var search = {}
-    //     search["username"] = $("#username").val();
-    //
-    //     $("#btn-search").prop("disabled", true);
-    //
-    //     $.ajax({
-    //         type: "POST",
-    //         contentType: "application/json",
-    //         url: "/api/search",
-    //         data: JSON.stringify(search),
-    //         dataType: 'json',
-    //         cache: false,
-    //         timeout: 600000,
-    //         success: function (data) {
-    //
-    //             var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
-    //                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
-    //             $('#feedback').html(json);
-    //
-    //             console.log("SUCCESS : ", data);
-    //             $("#btn-search").prop("disabled", false);
-    //
-    //         },
-    //         error: function (e) {
-    //
-    //             var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
-    //                 + e.responseText + "&lt;/pre&gt;";
-    //             $('#feedback').html(json);
-    //
-    //             console.log("ERROR : ", e);
-    //             $("#btn-search").prop("disabled", false);
-    //
-    //         }
-    //     });
-    //
-    // }
 </script>
 
 </body>

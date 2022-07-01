@@ -3,7 +3,7 @@ package com.matrix.shopping.dao.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="aboutt")
+@Table(name="about")
 public class AboutEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

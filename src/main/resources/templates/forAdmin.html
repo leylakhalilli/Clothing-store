@@ -5,46 +5,55 @@
     <title>Crepuscule Home Page</title>
 </head>
 
+
+<style>
+    .container {
+        margin: 20px;
+    }
+
+    h2 {
+        margin-left: 35%;
+    }
+</style>
 <body>
-<h2>Crepuscule Home Page</h2>
-<hr>
-
-<p>
-    Welcome to the Crepuscule home page!
-</p>
-
-<hr>
-
-<!-- display user name and role -->
-
-<div>
-    User: <span sec:authentication="name"></span>
-    <br><br>
-    Role(s): <span sec:authentication="principal.authorities"></span>
-    <br><br>
-
-
-</div>
-
-<div sec:authorize="hasRole('ROLE_ADMIN')">
+<div class="container">
+    <h2>Crepuscule Home Page</h2>
+    <hr>
 
     <p>
-        <a th:href="@{/admin}">Admin Page</a>
-        (Only for Admin)
+        Welcome to the Crepuscule home page!
     </p>
 
+    <!--    <hr>-->
+    <div sec:authorize access="hasRole('ROLE_ADMIN')">
+
+        <p>
+            <a th:href="@{/admin}">Admin Page</a>
+            (Only for Admin)
+
+        </p>
+
+    </div>
+
+    <div sec:authorize access="hasRole('ROLE_USER') and hasRole('ROLE_ADMIN')">
+
+        <p>
+            <a th:href="@{/welcome}">Welcome page</a>
+            (For Admin and users)
+        </p>
+
+    </div>
+
+    <hr>
+
+    <!-- Add a logout button -->
+    <form th:action="@{/logout}"
+          method="POST">
+
+        <input class="logout" type="submit" value="Logout"/>
+
+    </form>
 </div>
-
-<hr>
-
-<!-- Add a logout button -->
-<form th:action="@{/logout}"
-      method="POST">
-
-    <input type="submit" value="Logout"/>
-
-</form>
-
 </body>
 
 </html>

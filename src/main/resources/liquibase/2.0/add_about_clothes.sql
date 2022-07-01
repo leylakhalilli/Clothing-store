@@ -1,16 +1,17 @@
-insert into aboutt (title,text) values ('Welcome','Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Phasellus accumsan eget odio a rhoncus. Quisque bibendum ac nulla at varius.
-                     Proin et mauris tempus, cursus tellus vel, maximus odio.
-                     Mauris dignissim lorem at enim finibus pharetra.
-                     Suspendisse vulputate at lectus eu accumsan. Vivamus varius semper sem.
-                     Etiam sodales vitae nisl vel euismod. Ut faucibus mauris pellentesque faucibus vestibulum.
-                     Praesent dignissim augue non purus cursus, blandit tempor felis dictum. Aliquam condimentum,
-                     leo vitae hendrerit fringilla, lacus sem mollis leo, eget consectetur orci eros quis lacus.
-                     Donec quis elit at diam eleifend consequat. Sed vestibulum scelerisque eros. Proin vitae blandit erat.
-                     Integer dictum bibendum velit, vehicula laoreet tellus sodales eu. Suspendisse tristique metus erat, in consequat tellus volutpat vitae.
-                     Mauris eu viverra turpis.Sed at nunc mi. Sed finibus, lectus ac lobortis finibus,
-                     libero purus euismod purus, et tincidunt est sem et felis. Mauris ligula dolor,
-                     faucibus vel nibh non, pharetra rutrum odio. Quisque eu suscipit purus.');
+insert into about (title,text) values ('Welcome','Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus accumsan eget odio a rhoncus. Quisque bibendum ac nulla at varius.
+        Proin et mauris tempus, cursus tellus vel, maximus odio.
+        Mauris dignissim lorem at enim finibus pharetra.
+        Suspendisse vulputate at lectus eu accumsan. Vivamus varius semper sem.
+        Etiam sodales vitae nisl vel euismod. Ut faucibus mauris pellentesque faucibus vestibulum.
+        Praesent dignissim augue non purus cursus, blandit tempor felis dictum. Aliquam condimentum,
+        leo vitae hendrerit fringilla, lacus sem mollis leo, eget consectetur orci eros quis lacus.
+        Donec quis elit at diam eleifend consequat. Sed vestibulum scelerisque eros. Proin vitae blandit erat.
+        Integer dictum bibendum velit, vehicula laoreet tellus sodales eu. Suspendisse tristique metus erat, in consequat tellus volutpat vitae.
+        Mauris eu viverra turpis.Sed at nunc mi. Sed finibus, lectus ac lobortis finibus,
+        libero purus euismod purus, et tincidunt est sem et felis. Mauris ligula dolor,
+        faucibus vel nibh non, pharetra rutrum odio. Quisque eu suscipit purus.');
+
 
 insert into clothes (clothes_name,clothes_img,clothes_price,clothes_category,description) values ('T-Shirt-Black-Oversize','/img/tr1.jpg',29.99,'WOMEN','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore quis, odio, nam ducimus maxime unde consequuntur tenetur iste maiores porro explicabo ipsa aliquam dolore alias! Consectetur deserunt, debitis eligendi quam esse aspernatur. Eaque itaque necessitatibus possimus aperiam. Ducimus corrupti debitis quibusdam molestiae dolorum eos, voluptatibus suscipit perferendis?');
 insert into clothes (clothes_name,clothes_img,clothes_price,clothes_category,description) values ('Sweatshirt-Black-Regular','/img/tr4.jpg',30,'MEN','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore quis, odio, nam ducimus maxime unde consequuntur tenetur iste maiores porro explicabo ipsa aliquam dolore alias! Consectetur deserunt, debitis eligendi quam esse aspernatur. Eaque itaque necessitatibus possimus aperiam. Ducimus corrupti debitis quibusdam molestiae dolorum eos, voluptatibus suscipit perferendis?');

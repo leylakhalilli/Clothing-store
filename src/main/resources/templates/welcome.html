@@ -63,26 +63,18 @@
 <section id="home">
     <div class="container">
         <h1 style="text-align: center; color: white"><span>Welcome</span></h1>
+
+        <div class="signin-content">
+            <div sec:authorize="isAuthenticated()">
+                <form id="logoutForm" method="POST" th:action="@{/logout}">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                </form>
+                <a> <span sec:authentication="name"></span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></a>
+            </div>
+        </div>
     </div>
 </section>
 
-
-<!--             <h1>WELCOME</h1>-->
-<!--<div class="login">-->
-<!--    <section class="sign-in">-->
-<!--        <div class="container">-->
-
-<!--            <div class="signin-content">-->
-<!--                <div sec:authorize="isAuthenticated()">-->
-<!--                    <form id="logoutForm" method="POST" th:action="@{/logout}">-->
-<!--                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
-<!--                    </form>-->
-<!--                    <h2>Welcome!</h2>-->
-<!--                    <a> <span sec:authentication="name"></span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--</div>-->
+</div>
 </body>
 </html>

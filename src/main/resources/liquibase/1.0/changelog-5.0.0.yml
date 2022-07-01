@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create table about
+      id: create table clothes
       author: leyla
       changes:
         - createTable:
-            tableName: about
+            tableName: clothes
             columns:
               - column:
                   name: id
@@ -14,8 +14,17 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: title
+                  name: clothes_name
                   type: varchar
               - column:
-                  name: text
+                  name: clothes_img
+                  type: varchar
+              - column:
+                  name: clothes_price
+                  type: varchar
+              - column:
+                  name: clothes_category
+                  type: varchar
+              - column:
+                  name: description
                   type: varchar

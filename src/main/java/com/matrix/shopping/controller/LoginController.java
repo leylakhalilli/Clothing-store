@@ -60,13 +60,17 @@ public class LoginController {
         return "redirect:/";
     }
 
+    @GetMapping({ "/welcome"})
+    public String welcome(Model model) {
+        return "welcome";
+    }
 
 
-//    @GetMapping("/access-denied")
-//    public String showAccessDenied() {
-//
-//        return "access-denied";
-//
-//    }
+    @GetMapping("/access-denied")
+    public String showAccessDenied() {
+
+        return "accessDenied";
+
+    }
 
 }

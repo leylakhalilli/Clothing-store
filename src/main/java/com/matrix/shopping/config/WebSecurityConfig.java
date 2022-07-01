@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.csrf().disable().authorizeRequests()
 //                .antMatchers("/admin/products","/addNewProduct","/editProduct/**").hasRole("admin")
 
                 .antMatchers("/css/**", "/js/**", "/img/**", "/home", "/mypage", "/men", "/women", "/accessories",
@@ -50,6 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().permitAll()
                 .and()
                 .exceptionHandling().accessDeniedPage("/access-denied");
+
 
     }
 

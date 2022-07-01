@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -42,7 +43,8 @@ public class AdminPageController {
         return "editProduct";
     }
 
-    @GetMapping("/saveProduct")
+
+    @PostMapping("/saveProduct")
     public String saveProduct(ClothesEntity clothesEntity) {
         clothesService.saveProduct(clothesEntity);
         return "redirect:/admin";
@@ -54,6 +56,5 @@ public class AdminPageController {
         clothesService.deleteProduct(id);
         return "redirect:/admin";
     }
-
 
 }

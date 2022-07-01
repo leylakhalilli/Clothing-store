@@ -13,8 +13,8 @@ public class forAdminController {
         return "forAdmin";
     }
 
-    @GetMapping({"/", "/welcome"})
-    public String welcome(Model model) {
-        return "welcome";
-    }
+//    @GetMapping({"/welcome"})
+//    public String welcome(Model model) {
+//        return "welcome";
+//    }
 }
