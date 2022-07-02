@@ -6,11 +6,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ContactMapper {
+
     public ContactEntity contactEntityDto(ContactDto contactDto) {
         return new ContactEntity(
-                contactDto.getName(),
-                contactDto.getEmail(),
+
+                contactDto.getFirstName(),
+                contactDto.getLastName(),
                 contactDto.getPhone(),
-                contactDto.getMessage());
+                contactDto.getEmail(),
+                contactDto.getMessage()
+        );
     }
 }

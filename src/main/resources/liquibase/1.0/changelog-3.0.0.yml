@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create table ContactUs
+      id: create table Contact
       author: leyla
       changes:
         - createTable:
@@ -14,13 +14,16 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: name
+                  name: firstName
+                  type: varchar
+              - column:
+                  name: lastName
                   type: varchar
               - column:
                   name: email
                   type: varchar
               - column:
-                  name: contact_no
+                  name: phone
                   type: varchar
               - column:
                   name: message

@@ -120,14 +120,14 @@ public class CartController {
 
     }
 
-//    @RequestMapping(value = "checkout", method = RequestMethod.GET)
-//    public String checkout(HttpSession session) {
-//        if (session.getAttribute("username") == null) {
-//            return "redirect:/login";
-//        } else {
-//            return "redirect:/cart";
-//        }
-//    }
+    @RequestMapping(value = "checkout", method = RequestMethod.GET)
+    public String checkout(HttpSession session) {
+        if (session.getAttribute("username") == null) {
+            return "redirect:/login";
+        } else {
+            return "redirect:/cart";
+        }
+    }
 
 
 }

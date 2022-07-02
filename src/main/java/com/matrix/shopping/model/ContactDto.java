@@ -1,7 +1,8 @@
 package com.matrix.shopping.model;
 
 public class ContactDto {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String phone;
     private String message;
@@ -9,19 +10,28 @@ public class ContactDto {
     public ContactDto() {
     }
 
-    public ContactDto(String name, String email, String phone, String message) {
-        this.name = name;
+    public ContactDto(String firstName, String lastName, String email, String phone, String message) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.message = message;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

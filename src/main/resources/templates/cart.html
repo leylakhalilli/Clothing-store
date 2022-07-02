@@ -60,7 +60,8 @@
     </div>
 </nav>
 
-<div class="CartContainer" sec:authorize="hasRole('ROLE_USER')">
+
+<div class="CartContainer">
     <div class="Header">
         <h3 class="Heading">Shopping Cart</h3>
         <a th:href="@{'cart/clear'}" class="Action">Remove all</a>
@@ -106,23 +107,34 @@
         <div class="Subtotal">Total
             <div id="total" th:text="${total}"></div>
 
-            <button class="button"><a style=" text-decoration: none;font-size:23px; color:  #5b2a02;font-weight: 900"
+            <button class="button"><a
+                    th:href="${'cart/checkout/'}" style="text-decoration: none;font-size:23px; color:  #5b2a02;font-weight: 900"
                                       id="check">Confirm cart</a></button>
 
             <!--            <a class="button" th:href="${'cart/checkout/'}">Checkout</a>-->
         </div>
 
+
+        <!-- Add a logout button -->
+        <form th:action="@{/logout}"
+              method="POST">
+
+            <input class="logout" type="submit" value="Logout"/>
+
+        </form>
+
+
     </div>
 
-    <script>
-        document.getElementById("check").onclick = function () {
-            myFunction()
-        };
+<!--    <script>-->
+<!--        document.getElementById("check").onclick = function () {-->
+<!--            myFunction()-->
+<!--        };-->
 
-        function myFunction() {
-            alert("Your orders have been sent!");
-        }
-    </script>
+<!--        function myFunction() {-->
+<!--            alert("Your orders have been sent!");-->
+<!--        }-->
+<!--    </script>-->
 </body>
 
 </html>

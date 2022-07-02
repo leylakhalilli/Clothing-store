@@ -10,8 +10,15 @@ public class forAdminController {
     @GetMapping("/")
     public String showHome() {
 
+        return "cart";
+    }
+
+    @GetMapping("/a")
+    public String showAdminPage() {
+
         return "forAdmin";
     }
+
 
 //    @GetMapping({"/welcome"})
 //    public String welcome(Model model) {

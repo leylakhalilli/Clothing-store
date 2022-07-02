@@ -80,19 +80,21 @@
             <!--            <td><img class="adminProductImg" th:src="${pr.getClothesImg()}">-->
             <!--            <td/>-->
             <td th:text="${pr.getDescription()}"/>
-            <td class="buttons">
-                <a th:href="@{/admin/addproduct}">
-                    <button class="button btn-dark">Add</button>
-                </a>
 
-                <a th:href="${'/admin/editProduct/' + pr.id}">
-                    <button class="button btn-dark">Edit</button>
-                </a>
 
-                <a th:href="${'/admin/deleteProduct/' + pr.id}">
-                    <button class="button btn-dark" name="delete">Delete</button>
-                </a>
-            </td>
+<!--            <td class="buttons">-->
+<!--                <a th:href="@{/admin/addproduct}">-->
+<!--                    <button class="button btn-dark">Add</button>-->
+<!--                </a>-->
+
+<!--                <a th:href="${'/admin/editProduct/' + pr.id}">-->
+<!--                    <button class="button btn-dark">Edit</button>-->
+<!--                </a>-->
+
+<!--                <a th:href="${'/admin/deleteProduct/' + pr.id}">-->
+<!--                    <button class="button btn-dark" name="delete">Delete</button>-->
+<!--                </a>-->
+<!--            </td>-->
         </tr>
         </tbody>
     </table>

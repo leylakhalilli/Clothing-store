@@ -35,6 +35,16 @@
 
     </div>
 
+<!--    <div sec:authorize access="hasRole('ROLE_USER')">-->
+
+<!--        <p>-->
+<!--            <a th:href="@{/cart}">Cart</a>-->
+<!--            (Only for user)-->
+
+<!--        </p>-->
+
+<!--    </div>-->
+
     <div sec:authorize access="hasRole('ROLE_USER') and hasRole('ROLE_ADMIN')">
 
         <p>

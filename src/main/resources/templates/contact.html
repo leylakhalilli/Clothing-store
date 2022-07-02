@@ -60,128 +60,98 @@
         </div>
     </div>
 </nav>
+<div class="container-contact100 my-5 pt-5">
+    <div class="wrap-contact100 mt-3">
+        <div class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Send Us A Message
+				</span>
 
-<div class="background">
-    <div class="container">
-        <div class="screen">
-            <div class="screen-header">
-                <div class="screen-header-left">
-                    <!-- <div class="screen-header-button maximize"></div> -->
-                    <div class="screen-header-button maximize"></div>
-                    <div class="screen-header-button minimize"></div>
-                </div>
-                <div class="screen-header-right">
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                </div>
+            <label class="label-input100" for="first-name">Tell us your name *</label>
+            <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+                <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
+                <span class="focus-input100"></span>
             </div>
-            <div class="screen-body">
-                <div class="screen-body-item left">
-                    <div class="app-title">
-                        <span>CONTACT</span>
-                        <span>US</span>
-                    </div>
-                    <div class="app-contact">CONTACT INFO : +994 50 000 00 00</div>
-                </div>
-                <div class="screen-body-item">
-                    <div class="app-form" id="search-form">
-                        <div class="app-form-group">
-                            <input class="app-form-control" placeholder="NAME" required="">
-                        </div>
-                        <div class="app-form-group">
-                            <input class="app-form-control" placeholder="Eg. example@email.com" required="">
-                        </div>
-                        <div class="app-form-group">
-                            <input class="app-form-control" placeholder="Eg. +994 00 000 00 00">
-                        </div>
-                        <div class="app-form-group message">
-                            <input class="app-form-control" placeholder="MESSAGE" required="">
-                        </div>
-                        <div class="app-form-group buttons">
-                            <button class="app-form-button">CANCEL</button>
-                            <button class="app-form-button">SEND</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+                <input id='last-name' class="input100" type="text" name="last-name" placeholder="Last name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="email">Enter your email *</label>
+            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Enter phone number</label>
+            <div class="wrap-input100">
+                <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +994 00 000 00 00">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="message">Message *</label>
+            <div class="wrap-input100 validate-input" data-validate="Message is required">
+                <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-contact100-form-btn" id="contactButton">
+                <button class="contact100-form-btn">
+                    Send Message
+                </button>
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="contact100-more flex-col-c-m"
+             th:style="'background:url(img/reveal1.jpg);background-repeat: no-repeat, repeat; background-size: cover;'">
 
 
-<script src="js/contact.js"></script>
-<script>
-    // alert("helloooo")
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-
-    $(document).ready(function () {
-        $('#contactButton').click(function () {
-            let name = $('#name').val()
-            let email = $('#email').val()
-            let phone = $('#phone').val()
-            let message = $('#message').val()
-
-            var data = {}
-            data.name = name
-            data.email = email
-            data.phone = phone
-            data.message = message
+            <script src="js/contact.js"></script>
 
 
-            alert("helloooo")
+            <script>
+                // alert("helloooo")
+                window.dataLayer = window.dataLayer || [];
 
-            console.log(data)
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
 
-            $.ajax(
-                {
-                    url: '/contact/',
-                    type: 'POST', // http method
-                    data: JSON.stringify(data),  // data to submit
-                    dataType: 'json',
-                    contentType: "application/json"
+                gtag('js', new Date());
 
-                });
-            alert("Your message was sent!");
-        });
+                gtag('config', 'UA-23581568-13');
 
-    })
+                $(document).ready(function () {
+                    $('#contactButton').click(function () {
+                        let firstName = $('#first-name').val()
+                        let lastName = $('#last-name').val()
+                        let email = $('#email').val()
+                        let phone = $('#phone').val()
+                        let message = $('#message').val()
 
+                        var data = {}
+                        data.lastName = lastName
+                        data.firstName = firstName
+                        data.email = email
+                        data.phone = phone
+                        data.message = message
 
+                        console.log(data)
+                        $.ajax(
+                            {
+                                url: '/contact/',
+                                type: 'POST', // http method
+                                data: JSON.stringify(data),  // data to submit
+                                dataType: 'json',
+                                contentType: "application/json"
 
-    // $(document).ready(function () {
-    //
-    //     $("#contact-form").submit(function (event) {
-    //
-    //         // do not post the form and trigger full page refresh
-    //         event.preventDefault();
-    //
-    //         var formData = ..  // construct some formData
-    //
-    //         $.ajax({
-    //             type: "POST",
-    //             contentType: "application/json",
-    //             url: "/homePage/contact",
-    //             data: JSON.stringify(formData),
-    //             dataType: "json",
-    //             success: function (data) {
-    //                 console.log("SUCCESS : ", data);
-    //             },
-    //             error: function (e) {
-    //                 console.log("ERROR : ", e);
-    //             }
-    //         });
-    //     });
-    // });
-</script>
+                            });
+                        alert("Your message was sent!");
+                    });
+
+                })
+
+            </script>
 
 </body>
 </html>
