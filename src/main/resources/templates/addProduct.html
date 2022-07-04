@@ -22,48 +22,90 @@
         <h5>Add new Product</h5>
         <br>
         <!--        <form th:action="@{saveProduct}" method="post">-->
-        <form method="post">
+        <form method="post" autocomplete="off">
 
             <input type="text" name="id" placeholder="Product id"> ID</input><br>
             <br>
-            <input type="text" name="name" placeholder="Product name"> Name</input><br>
+            <input type="text" name="clothes-name" placeholder="Product name"> Name</input><br>
             <br>
-            <input type="number" name="price" placeholder="Product price"> Price</input><br>
+            <input type="number" name="clothes-price" placeholder="Product price"> Price</input><br>
             <br>
             <!--        <input type="text" name="image" placeholder="product image">Image</input><br>-->
-            <input type="text" name="category" placeholder="Product category"> Category</input><br>
+            <input type="text" name="clothes-category" placeholder="Product category"> Category</input><br>
             <br>
-            <button id="button" type="submit">Submit</button>
+            <input type="text" name="description" placeholder="Product description"> Description</input><br>
+            <br>
+
         </form>
+
+        <!--        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">-->
+        <!--            <input id="clothes-name" class="input100" type="text" name="clothes-name" placeholder="Name">-->
+        <!--            <span class="focus-input100"></span>-->
+        <!--        </div>-->
+        <!--        <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">-->
+        <!--            <input id='clothes-price' class="input100" type="text" name="clothes-price" placeholder="Price">-->
+        <!--               <span class="focus-input100"></span>-->
+
+        <!--        </div>-->
+
+        <!--            <input id="clothes_category" class="input100" type="text" name="clothes_category" placeholder="Category">-->
+        <!--            <span class="focus-input100"></span>-->
+        <!--        </div>-->
+
+        <!--        <div class="wrap-input100">-->
+        <!--            <input id="description" class="input100" type="text" name="description" placeholder="description">-->
+        <!--            <span class="focus-input100"></span>-->
+        <!--        </div>-->
+
+        <!--            <div class="container-contact100-form-btn" id="button">-->
+        <!--                <button class="contact100-form-btn">-->
+        <!--                    Submit-->
+        <!--                </button>-->
+        <!--            </div>-->
+        <!--            &lt;!&ndash;            <button id="button" type="submit">Submit</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;        </form>&ndash;&gt;-->
+        <!--    </div>-->
     </div>
 </div>
-
 </body>
 <script>
+    window.dataLayer = window.dataLayer || [];
 
-    $("#button").click(function () {
-        alert("hiiii")
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-        var name = $("#name").val()
-        alert(name)
-        var price = $("#price").val()
-        var description = $("#description").val()
+    gtag('js', new Date());
 
-        var data = {}
-        data.clothesName = name
-        data.clothesPrice = price
-        data.description = description
-        console.log(data)
+    gtag('config', 'UA-23581568-13');
 
-        $ajax({
-            type: "POST",
-            url: "http://localhost:8181/admin/saveProduct",
-            data: JSON.stringify(data),
-            success: true,
-            contentType: "application/json",
-            dataType: "json"
-        });
+    $(document).ready(function () {
+        $('#button').click(function () {
+            // alert("hiiii")
 
+            var name = $('#clothes-name').val()
+            alert(name)
+            var price = $('#clothes-price').val()
+            var category = $('#clothes-category').val()
+            var description = $('#description').val()
+
+            var data = {}
+            data.clothesName = name
+            data.clothesPrice = price
+            data.category = category
+            data.description = description
+            console.log(data)
+
+            $ajax({
+                type: "POST",
+                url: "http://localhost:8181/admin/saveProduct",
+                data: JSON.stringify(data),
+                success: true,
+                contentType: "application/json",
+                dataType: "json"
+            });
+
+        })
     })
 </script>
 </html>

@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-<!--</head>-->
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,13 +28,11 @@
     .header {
         margin: 20px;
         text-align: center;
-        /*background-color: #c867e8;*/
     }
 
     .buttons {
         display: flex;
         justify-content: space-between;
-        /*padding-left: 10px;*/
         margin-left: 10px;
     }
 
@@ -58,7 +50,6 @@
     <div class="header">
         <h1 class="logo">Crépuscule</h1>
         <h4>for managers</h4>
-        <!--        <h3>Add new Product</h3>-->
     </div>
     <table id="example" class="table table-bordered table-striped" style="width: 100%">
         <thead>
@@ -82,19 +73,19 @@
             <td th:text="${pr.getDescription()}"/>
 
 
-<!--            <td class="buttons">-->
-<!--                <a th:href="@{/admin/addproduct}">-->
-<!--                    <button class="button btn-dark">Add</button>-->
-<!--                </a>-->
+            <td class="buttons">
+                <a th:href="@{/admin/addproduct}">
+                    <button class="button btn-dark">Add</button>
+                </a>
 
-<!--                <a th:href="${'/admin/editProduct/' + pr.id}">-->
-<!--                    <button class="button btn-dark">Edit</button>-->
-<!--                </a>-->
+                <a th:href="${'/admin/editProduct/' + pr.id}">
+                    <button class="button btn-dark">Edit</button>
+                </a>
 
-<!--                <a th:href="${'/admin/deleteProduct/' + pr.id}">-->
-<!--                    <button class="button btn-dark" name="delete">Delete</button>-->
-<!--                </a>-->
-<!--            </td>-->
+                <a th:href="${'/admin/deleteProduct/' + pr.id}">
+                    <button class="button btn-dark" name="delete">Delete</button>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>

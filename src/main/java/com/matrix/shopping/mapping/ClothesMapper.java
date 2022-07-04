@@ -13,15 +13,5 @@ public interface ClothesMapper {
 
     ClothesDto entityDto(ClothesEntity clothesEntity);
 
-//   public ClothesDto entityDto(ClothesDto clothesDto){
-//        return new ClothesDto(
-//                clothesDto.getId(),
-//                clothesDto.getClothesName(),
-//                clothesDto.getClothesImg(),
-//                clothesDto.getClothesPrice(),
-//                clothesDto.getClothesCategory(),
-//                clothesDto.getDescription()
-//        );
-//    }
 
 }

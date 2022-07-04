@@ -62,14 +62,31 @@
 </nav>
 <section id="home">
     <div class="container">
-        <h1 style="text-align: center; color: white"><span>Welcome</span></h1>
+        <h1 style="text-align: center; color: white"><span>Welcome to the Crepuscule home page!
+</span></h1>
 
-        <div class="signin-content">
+
+        <div style="text-align: center" sec:authorize access="hasRole('ROLE_ADMIN')">
+
+            <p>
+                <a th:href="@{/admin}">Admin Page</a>
+                (Only for Admin)
+
+            </p>
+
+        </div>
+
+
+
+        <div style="text-align: center; " class="signin-content">
             <div sec:authorize="isAuthenticated()">
                 <form id="logoutForm" method="POST" th:action="@{/logout}">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </form>
-                <a> <span sec:authentication="name"></span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></a>
+
+                <a> <span sec:authentication="name"></span> <a
+                        onclick="document.forms['logoutForm'].submit()">Logout</a></a>
+
             </div>
         </div>
     </div>

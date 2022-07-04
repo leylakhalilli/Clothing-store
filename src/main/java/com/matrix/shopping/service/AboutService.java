@@ -1,13 +1,9 @@
 package com.matrix.shopping.service;
 
-import com.matrix.shopping.dao.entity.AboutEntity;
-import com.matrix.shopping.dao.entity.ProductEntity;
 import com.matrix.shopping.dao.repository.AboutRepository;
 import com.matrix.shopping.mapping.AboutMapper;
 import com.matrix.shopping.model.AboutDto;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class AboutService {

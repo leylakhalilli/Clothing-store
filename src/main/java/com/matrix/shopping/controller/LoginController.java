@@ -60,7 +60,7 @@ public class LoginController {
         return "redirect:/";
     }
 
-    @GetMapping({ "/welcome"})
+    @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         return "welcome";
     }

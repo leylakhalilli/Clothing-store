@@ -1,72 +1,72 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">-->
 
-<head>
-    <title>Crepuscule Home Page</title>
-</head>
+<!--<head>-->
+<!--    <title>Crepuscule Home Page</title>-->
+<!--</head>-->
 
 
-<style>
-    .container {
-        margin: 20px;
-    }
+<!--<style>-->
+<!--    .container {-->
+<!--        margin: 20px;-->
+<!--    }-->
 
-    h2 {
-        margin-left: 35%;
-    }
-</style>
-<body>
-<div class="container">
-    <h2>Crepuscule Home Page</h2>
-    <hr>
+<!--    h2 {-->
+<!--        margin-left: 35%;-->
+<!--    }-->
+<!--</style>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h2>Crepuscule Home Page</h2>-->
+<!--    <hr>-->
 
-    <p>
-        Welcome to the Crepuscule home page!
-    </p>
+<!--    <p>-->
+<!--        Welcome to the Crepuscule home page!-->
+<!--    </p>-->
 
-    <!--    <hr>-->
-    <div sec:authorize access="hasRole('ROLE_ADMIN')">
-
-        <p>
-            <a th:href="@{/admin}">Admin Page</a>
-            (Only for Admin)
-
-        </p>
-
-    </div>
-
-<!--    <div sec:authorize access="hasRole('ROLE_USER')">-->
+<!--    &lt;!&ndash;    <hr>&ndash;&gt;-->
+<!--    <div sec:authorize access="hasRole('ROLE_ADMIN')">-->
 
 <!--        <p>-->
-<!--            <a th:href="@{/cart}">Cart</a>-->
-<!--            (Only for user)-->
+<!--            <a th:href="@{/admin}">Admin Page</a>-->
+<!--            (Only for Admin)-->
 
 <!--        </p>-->
 
 <!--    </div>-->
 
-    <div sec:authorize access="hasRole('ROLE_USER') and hasRole('ROLE_ADMIN')">
+<!--&lt;!&ndash;    <div sec:authorize access="hasRole('ROLE_USER')">&ndash;&gt;-->
 
-        <p>
-            <a th:href="@{/welcome}">Welcome page</a>
-            (For Admin and users)
-        </p>
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a th:href="@{/cart}">Cart</a>&ndash;&gt;-->
+<!--&lt;!&ndash;            (Only for user)&ndash;&gt;-->
 
-    </div>
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
 
-    <hr>
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
 
-    <!-- Add a logout button -->
-    <form th:action="@{/logout}"
-          method="POST">
+<!--    <div sec:authorize access="hasRole('ROLE_USER') and hasRole('ROLE_ADMIN')">-->
 
-        <input class="logout" type="submit" value="Logout"/>
+<!--        <p>-->
+<!--            <a th:href="@{/welcome}">Welcome page</a>-->
+<!--            (For Admin and users)-->
+<!--        </p>-->
 
-    </form>
-</div>
-</body>
+<!--    </div>-->
 
-</html>
+<!--    <hr>-->
+
+<!--    &lt;!&ndash; Add a logout button &ndash;&gt;-->
+<!--    <form th:action="@{/logout}"-->
+<!--          method="POST">-->
+
+<!--        <input class="logout" type="submit" value="Logout"/>-->
+
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->
 
 
 

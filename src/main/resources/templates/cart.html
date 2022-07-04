@@ -108,23 +108,23 @@
             <div id="total" th:text="${total}"></div>
 
             <button class="button"><a
-                    th:href="${'cart/checkout/'}" style="text-decoration: none;font-size:23px; color:  #5b2a02;font-weight: 900"
+                    th:href="${'/cart/checkout/'}" style="text-decoration: none;font-size:23px; color:  #5b2a02;font-weight: 900"
                                       id="check">Confirm cart</a></button>
 
-            <!--            <a class="button" th:href="${'cart/checkout/'}">Checkout</a>-->
         </div>
 
 
         <!-- Add a logout button -->
-        <form th:action="@{/logout}"
-              method="POST">
+<!--        <form th:action="@{/logout}"-->
+<!--              method="POST">-->
 
-            <input class="logout" type="submit" value="Logout"/>
+<!--            <input class="logout" type="submit" value="Logout"/>-->
 
-        </form>
+<!--        </form>-->
 
 
     </div>
+</div>
 
 <!--    <script>-->
 <!--        document.getElementById("check").onclick = function () {-->

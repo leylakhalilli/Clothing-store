@@ -30,31 +30,31 @@ public class AdminPageController {
         return "adminPage";
     }
 
-//    @GetMapping("/addproduct")
-//    public String addProduct() {
-//        return "addProduct";
-//    }
-//
-//    @GetMapping("/editProduct/{id}")
-//    public String editProduct(@PathVariable Integer id, Model model) {
-//        ClothesEntity clothesEntity = clothesService.getClothesParametr(id);
-//        model.addAttribute("product", clothesEntity);
-//
-//        return "editProduct";
-//    }
-//
-//
-//    @PostMapping("/saveProduct")
-//    public String saveProduct(ClothesEntity clothesEntity) {
-//        clothesService.saveProduct(clothesEntity);
-//        return "redirect:/admin";
-//
-//    }
-//
-//    @GetMapping("/deleteProduct/{id}")
-//    public String deleteProduct(@PathVariable Integer id) {
-//        clothesService.deleteProduct(id);
-//        return "redirect:/admin";
-//    }
-//
+    @GetMapping("/addproduct")
+    public String addProduct() {
+        return "addProduct";
+    }
+
+    @GetMapping("/editProduct/{id}")
+    public String editProduct(@PathVariable Integer id, Model model) {
+        ClothesEntity clothesEntity = clothesService.getClothesParametr(id);
+        model.addAttribute("product", clothesEntity);
+
+        return "editProduct";
+    }
+
+
+    @PostMapping("/saveProduct")
+    public String saveProduct(ClothesEntity clothesEntity) {
+        clothesService.saveProduct(clothesEntity);
+        return "redirect:/admin";
+
+    }
+
+    @GetMapping("/deleteProduct/{id}")
+    public String deleteProduct(@PathVariable Integer id) {
+        clothesService.deleteProduct(id);
+        return "redirect:/admin";
+    }
+
 }

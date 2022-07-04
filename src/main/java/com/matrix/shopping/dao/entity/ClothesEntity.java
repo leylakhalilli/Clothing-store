@@ -10,10 +10,13 @@ public class ClothesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(name = "clothes_name")
     private String clothesName;
+
     @Column(name = "clothes_img")
     private String clothesImg;
+
     @Column(name = "clothes_price")
     private Double clothesPrice;
 
