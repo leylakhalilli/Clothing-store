@@ -63,16 +63,31 @@
     <div class="signup">
         <form method="POST" th:object="${userForm}" th:action="@{/registration}" autocomplete="off">
             <label for="chk" aria-hidden="true">Sign up</label>
+
             <div>
                 <input id="username" type="text" th:field="*{username}" placeholder="Username" autofocus="true">
+
+<!--                <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>-->
+                <span class="has-error" th:if="${#fields.hasErrors('username')}">
+                    Sorry... username already taken</span>
             </div>
+
+
             <input id="email" name="email" type="email" th:field="*{email}" placeholder="Email">
+
             <div>
 
                 <input id="password" type="password" th:field="*{password}" placeholder="Password">
+<!--                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
+                <span class="has-error" th:if="${#fields.hasErrors('password')}" >
+                    Try one with at least 6 characters.
+                </span>
+
 
             </div>
             <button>Sign up</button>
+
+
         </form>
     </div>
 
