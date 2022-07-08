@@ -64,10 +64,6 @@
             <label for="chk" aria-hidden="true">Login</label>
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-
-<!--              <div class="error-message">-->
-<!--                <span class="has-error" th:text="${error}"></span>-->
-<!--              </div>-->
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <span class="has-error" th:text="${error}"></span>
             <span class="has-error" th:text="${message}"></span>

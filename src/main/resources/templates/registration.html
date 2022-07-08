@@ -76,17 +76,14 @@
             <input id="email" name="email" type="email" th:field="*{email}" placeholder="Email">
 
             <div>
-
                 <input id="password" type="password" th:field="*{password}" placeholder="Password">
 <!--                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
                 <span class="has-error" th:if="${#fields.hasErrors('password')}" >
                     Try one with at least 6 characters.
                 </span>
-
-
             </div>
-            <button>Sign up</button>
 
+            <button>Sign up</button>
 
         </form>
     </div>
