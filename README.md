@@ -1,5 +1,17 @@
 # Online shopping project
 
+## Technologies
+Java
+Spring boot
+Spring security
+Spring Data JPA
+PostgreSQL
+Html
+Css
+Bootstrap
+JavaScript
+
+
 
 ## Home Page
 ![Screenshot (50)](https://user-images.githubusercontent.com/97806866/177253863-cd708aa1-ed63-474f-9564-a38ab2111291.png)
